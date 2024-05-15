@@ -10,6 +10,8 @@
 *.fdb_latexmk
 *.fls
 *.synctex(busy)
+*.bcf
+*.run.xml
 
 # LaTeX editor files
 *.swp

@@ -5,10 +5,11 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{setspace}
-\usepackage{hyperref}
 \usepackage{abstract}
 \usepackage{titlesec}
 \usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage[hidelinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
 
 % Page setup
 \geometry{margin=1in}
@@ -37,7 +38,7 @@
 \twocolumn[
     \maketitle
     \begin{onecolabstract}
-        \textbf{Abstract:} Visual cortical prostheses represent a revolutionary technology within the field of neuroprosthetics, aimed at restoring vision for individuals with visual impairments through direct neural interfaces. This review systematically explores the current capabilities, limitations, and future prospects of visual cortical prostheses, with a focus on the integration of artificial intelligence (AI) to enhance functionality and effectiveness. Key topics include the optimization of phosphene patterns, real-time image processing, and comparisons with other types of prosthetic devices. The goal is to provide a comprehensive overview of the state-of-the-art in visual cortical prostheses and propose future research directions.
+        \textbf{Abstract:} Visual cortical prostheses represent a revolutionary technology within the field of neuro\-prosthetics, aimed at restoring vision for individuals with visual impairments through direct neural interfaces. This review systematically explores the current capabilities, limitations, and future prospects of visual cortical prostheses, with a focus on the integration of artificial intelligence (AI) to enhance functionality and effectiveness. Key topics include the optimization of phosphene patterns, real-time image processing, and comparisons with other types of prosthetic devices. The goal is to provide a comprehensive overview of the state-of-the-art in visual cortical prostheses and propose future research directions.
     \end{onecolabstract}
     \vspace{1cm}
 ]
@@ -46,13 +47,13 @@
 Visual cortical prostheses aim to restore vision for individuals with visual impairments by converting external visual information into neural signals that the brain can interpret, bypassing damaged visual pathways. This section introduces the background, importance, and objectives of the review.
 
 \subsection{Background}
-Visual cortical prostheses convert external visual information into neural signals, producing phosphenes—perceived spots of light—through electrical stimulation of the visual cortex.
+Visual cortical prostheses convert external visual information into neural signals, producing phosphenes---perceived spots of light---through electrical stimulation of the visual cortex~\cite{vandergrintenBiologicallyPlausiblePhosphene2024}.
 
 \subsection{Research Question}
 This review addresses the following questions:
 \begin{itemize}
-    \item How is AI leveraged to enhance visual prostheses, particularly in optimizing phosphene patterns and real-time image processing?
-    \item How do visual cortical prostheses compare with other types of prosthetic devices?
+    \item How is AI leveraged to enhance visual prostheses, particularly in optimizing phosphene patterns and real-time image processing~\cite{farnumNewVisionVisual2020}?
+    \item How do visual cortical prostheses compare with other types of prosthetic devices~\cite{graniPersonalizedClosedloopStimulation2022}?
     \item What are the functional differences between AI-enhanced prosthetic vision and natural visual processing within the human brain?
 \end{itemize}
 
@@ -72,13 +73,13 @@ Details current drawbacks, biocompatibility issues, and areas requiring improvem
 Analyzes key articles related to the topic, summarizing their contributions to understanding visual cortical prostheses.
 
 \subsection{Article 1}
-``Towards biologically plausible phosphene simulation for the differentiable optimization of visual cortical prostheses'' (eLife, 2020)
+``Towards biologically plausible phosphene simulation for the differentiable optimization of visual cortical prostheses''~\cite{vandergrintenBiologicallyPlausiblePhosphene2024}.
 
 \subsection{Article 2}
-``New Vision for Visual Prostheses'' (Frontiers in Neuroscience, 2021)
+``New Vision for Visual Prostheses''~\cite{farnumNewVisionVisual2020}.
 
 \subsection{Article 3}
-``Toward a personalized closed-loop stimulation of the visual cortex: Advances and challenges'' (Frontiers in Neuroscience, 2021)
+``Toward a personalized closed-loop stimulation of the visual cortex: Advances and challenges''~\cite{graniPersonalizedClosedloopStimulation2022}.
 
 \section{Objective}\label{sec:objective}
 Provides a comprehensive overview of the current state and future potential of visual cortical prostheses, highlighting technological capabilities, AI integration, and challenges.
@@ -89,6 +90,6 @@ Describes the strategy for compiling and analyzing relevant literature, using ca
 \section{Conclusion}\label{sec:conclusion}
 Summarizes the key findings of the review and proposes future research directions.
 
-\printbibliography
+\printbibliography%
 
 \end{document}
