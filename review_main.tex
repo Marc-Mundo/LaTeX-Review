@@ -10,6 +10,8 @@
 \usepackage[backend=biber,style=ieee]{biblatex}
 \usepackage[hidelinks]{hyperref}
 \PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
+% Set marginparwidth for todonotes
+\setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
 \usepackage{todonotes} % TODOs
 
 % Page setup
@@ -29,6 +31,7 @@
   Student Number: 4413105\\
   \texttt{marc.posthuma@ru.nl}\\
   \\
+  Radboud University\\
   Supervisor: Prof.\ dr.\ R.J.A.\ van\ Wezel\\
   Department: Neurobiology, Donders Centre for Neuroscience
 }
@@ -36,10 +39,13 @@
 
 % Document
 \begin{document}
+
+\listoftodos% Remove this line before submission
+
 \twocolumn[
     \maketitle
     \begin{onecolabstract}
-        \textbf{Abstract:} Visual cortical prostheses represent a revolutionary
+        \noindent Visual cortical prostheses represent a revolutionary
         technology within the field of neuro\-prosthetics, aimed at restoring
         vision for individuals with visual impairments through direct neural
         interfaces. This review systematically explores the current
@@ -51,9 +57,11 @@
         provide a comprehensive overview of the state-of-the-art in visual
         cortical prostheses and propose future research directions.
     \end{onecolabstract}
+    \textbf{Keywords:} Visual cortical prostheses, neuroprosthetics, artificial
+    intelligence, phosphene patterns, real-time image processing
     \vspace{1cm}
 ]
-\listoftodos% Remove this line when you're done with the document, or uncomment if used
+
 \section{Introduction}\label{sec:intro}
 \subsection{Background}
 The field of neuroprosthetics has witnessed remarkable progress, particularly
@@ -94,9 +102,9 @@ This review addresses the following questions:
 \begin{itemize}
     \item How is AI leveraged to enhance visual prostheses, particularly in
           optimizing phosphene patterns and real-time image
-          processing~\cite{farnumNewVisionVisual2020}?
+          processing?
     \item How do visual cortical prostheses compare with other types of
-          prosthetic devices~\cite{graniPersonalizedClosedloopStimulation2022}?
+          prosthetic devices?
     \item What are the functional differences between AI-enhanced prosthetic
           vision and natural visual processing within the human brain?
 \end{itemize}
@@ -256,11 +264,27 @@ possible to deliver sufficient power and high-fidelity signals to the implants,
 ensuring reliable and efficient
 operation~\cite{rosenfeldTissueResponseChronically2020}.
 
-Recent advancements include the development of biphasic quasistatic brain communication (BP-QBC), a technique that significantly reduces power consumption while maintaining high data transfer rates. This method leverages electro-quasistatic signaling to create a low-power, broadband communication channel between wireless neural implants and external devices, offering a promising solution for energy-efficient and high-speed data transmission in neural prosthetics~\cite{chatterjeeBiphasicQuasistaticBrain2023}.
+Recent advancements include the development of biphasic quasistatic brain
+communication (BP-QBC), a technique that significantly reduces power consumption
+while maintaining high data transfer rates. This method leverages
+electro-quasistatic signaling to create a low-power, broadband communication
+channel between wireless neural implants and external devices, offering a
+promising solution for energy-efficient and high-speed data transmission in
+neural prosthetics~\cite{chatterjeeBiphasicQuasistaticBrain2023}.
 
-Another innovative approach is the use of feed-forward neural networks to improve the control of brain-machine interfaces. This simpler neural network architecture enhances the speed and accuracy of prosthetic control by more closely mimicking the natural communication pathways between the brain and the body. Such advancements not only improve the functionality of prosthetic devices but also enhance their usability for individuals with paralysis or limb loss~\cite{willseyRealtimeBrainmachineInterface2022}.
+Another innovative approach is the use of feed-forward neural networks to
+improve the control of brain-machine interfaces. This simpler neural network
+architecture enhances the speed and accuracy of prosthetic control by more
+closely mimicking the natural communication pathways between the brain and the
+body. Such advancements not only improve the functionality of prosthetic devices
+but also enhance their usability for individuals with paralysis or limb
+loss~\cite{willseyRealtimeBrainmachineInterface2022}.
 
-Moreover, multidimensional graph neural networks (GNNs) have been employed to optimize wireless communication policies in neural prosthetics. These networks use graph-based representations to manage complex data transmission scenarios, improving the efficiency and reliability of wireless communication between implants and external devices~\cite{liuMultidimensionalGraphNeural2024}.
+Moreover, multidimensional graph neural networks (GNNs) have been employed to
+optimize wireless communication policies in neural prosthetics. These networks
+use graph-based representations to manage complex data transmission scenarios,
+improving the efficiency and reliability of wireless communication between
+implants and external devices~\cite{liuMultidimensionalGraphNeural2024}.
 
 These advancements in wireless communication technology are crucial for the
 development of next-generation visual cortical prostheses, providing users with
@@ -299,6 +323,13 @@ perception and improve the user's ability to track moving objects.
 GANs are utilized to generate realistic phosphene patterns by training on large
 datasets of visual scenes, improving the fidelity and natural appearance of the
 visual output.
+
+\subsubsection*{Multidimensional Graph Neural Networks (GNNs)}
+GNNs are leveraged to model and interpret complex relationships within
+multidimensional data, enhancing the system's ability to understand and process
+spatial and relational information. This capability improves the prosthetic
+system's performance in recognizing patterns and structures within the visual
+input, leading to more accurate and context-aware visual perception.
 
 \subsection{Other Functional Improvements}
 Another significant advancement is the implementation of closed-loop systems in
