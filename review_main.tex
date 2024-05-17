@@ -38,57 +38,177 @@
 \twocolumn[
     \maketitle
     \begin{onecolabstract}
-        \textbf{Abstract:} Visual cortical prostheses represent a revolutionary technology within the field of neuro\-prosthetics, aimed at restoring vision for individuals with visual impairments through direct neural interfaces. This review systematically explores the current capabilities, limitations, and future prospects of visual cortical prostheses, with a focus on the integration of artificial intelligence (AI) to enhance functionality and effectiveness. Key topics include the optimization of phosphene patterns, real-time image processing, and comparisons with other types of prosthetic devices. The goal is to provide a comprehensive overview of the state-of-the-art in visual cortical prostheses and propose future research directions.
+        \textbf{Abstract:} Visual cortical prostheses represent a revolutionary
+        technology within the field of neuro\-prosthetics, aimed at restoring
+        vision for individuals with visual impairments through direct neural
+        interfaces. This review systematically explores the current
+        capabilities, limitations, and future prospects of visual cortical
+        prostheses, with a focus on the integration of artificial intelligence
+        (AI) to enhance functionality and effectiveness. Key topics include the
+        optimization of phosphene patterns, real-time image processing, and
+        comparisons with other types of prosthetic devices. The goal is to
+        provide a comprehensive overview of the state-of-the-art in visual
+        cortical prostheses and propose future research directions.
     \end{onecolabstract}
     \vspace{1cm}
 ]
 
 \section{Introduction}\label{sec:intro}
-Visual cortical prostheses aim to restore vision for individuals with visual impairments by converting external visual information into neural signals that the brain can interpret, bypassing damaged visual pathways. This section introduces the background, importance, and objectives of the review.
-
 \subsection{Background}
-Visual cortical prostheses convert external visual information into neural signals, producing phosphenes---perceived spots of light---through electrical stimulation of the visual cortex~\cite{vandergrintenBiologicallyPlausiblePhosphene2024}.
+The field of neuroprosthetics has witnessed remarkable progress, particularly
+with the advent of visual cortical prostheses. These advanced devices offer hope
+for restoring vision in individuals with severe visual impairments by
+interfacing directly with the brain's visual cortex. Visual cortical prostheses
+work by converting visual information from the external environment into neural
+signals that the brain can process, effectively bypassing damaged visual
+pathways. The core technology involves the generation of phosphenes---perceived
+spots of light resulting from electrical stimulation of the visual
+cortex~\cite{vandergrintenBiologicallyPlausiblePhosphene2024}. However,
+organizing these phosphenes into coherent and interpretable visual patterns
+remains a significant challenge~\cite{merabetWhatBlindnessCan2005}.
+
+AI has emerged as a pivotal element in enhancing these prosthetic systems. By
+leveraging sophisticated algorithms, AI can optimize stimulation patterns to
+create more naturalistic visual experiences for
+users~\cite{kriegeskorteDeepNeuralNetworks2015}. AI's role extends to real-time
+image processing, allowing the prosthesis to adapt to varying visual
+environments and tasks~\cite{marblestoneIntegrationDeepLearning2016}. This
+capability is crucial for developing prosthetic systems that closely mimic
+natural vision, providing users with more effective and adaptable solutions. The
+integration of AI not only improves the functionality of these devices but also
+opens new avenues for innovation in how visual information is processed and
+perceived~\cite{gallettiCorticalConnectionsArea2001}.
+
+This review aims to provide a comprehensive analysis of visual cortical
+prostheses, focusing on the role of AI in advancing these prosthetics. By
+examining current capabilities, identifying limitations, and proposing future
+research directions, this work seeks to contribute to the ongoing development of
+more effective and user-friendly visual prosthetic systems. Combining
+technological innovation with neuroscientific insights has the profound
+potential to enhance the quality of life for individuals with visual
+impairments.
 
 \subsection{Research Question}
 This review addresses the following questions:
 \begin{itemize}
-    \item How is AI leveraged to enhance visual prostheses, particularly in optimizing phosphene patterns and real-time image processing~\cite{farnumNewVisionVisual2020}?
-    \item How do visual cortical prostheses compare with other types of prosthetic devices~\cite{graniPersonalizedClosedloopStimulation2022}?
-    \item What are the functional differences between AI-enhanced prosthetic vision and natural visual processing within the human brain?
+    \item How is AI leveraged to enhance visual prostheses, particularly in
+          optimizing phosphene patterns and real-time image
+          processing~\cite{farnumNewVisionVisual2020}?
+    \item How do visual cortical prostheses compare with other types of
+          prosthetic devices~\cite{graniPersonalizedClosedloopStimulation2022}?
+    \item What are the functional differences between AI-enhanced prosthetic
+          vision and natural visual processing within the human brain?
 \end{itemize}
 
 \section{Technological Advances}\label{sec:tech_advances}
-This section covers recent technological advancements in visual cortical prostheses, including hardware and software innovations.
+This section covers recent technological advancements in visual cortical
+prostheses, including hardware and software innovations.
+
+Recent years have seen significant progress in the development of visual
+cortical prostheses, driven by advancements in both hardware and software
+systems. These innovations are pivotal in enhancing the functionality,
+efficiency, and user experience of these devices.
+
+One major area of advancement is in electrode design and fabrication.
+Traditional electrodes have been limited by issues such as biocompatibility,
+stability, and the ability to generate precise neural stimulation. Recent
+studies have introduced novel materials and fabrication techniques that
+significantly improve these aspects. For instance, the development of flexible
+and biocompatible electrodes allows for better integration with neural tissue,
+reducing the risk of damage and increasing the longevity of the implants
+~\cite{xiangFlexibleThreedimensionalElectrode2016}. Furthermore, advances in
+microfabrication have enabled the creation of high-density electrode arrays that
+can stimulate the visual cortex with greater precision, offering the potential
+for more detailed and coherent visual
+experiences~\cite{ryuSpatiallyConfinedResponses2020}.
+
+On the software side, the integration of artificial intelligence (AI) has
+revolutionized the way visual information is processed and interpreted by
+prosthetic systems. AI algorithms, particularly those based on deep learning,
+have been employed to optimize stimulation patterns and enhance image processing
+capabilities. These algorithms can learn from vast amounts of data to improve
+the accuracy and efficiency of visual signal conversion, making the visual
+experiences more naturalistic and adaptable to different environments
+~\cite{romeniMachineLearningFramework2021}.
+
+Another significant advancement is the implementation of closed-loop systems in
+visual cortical prostheses. These systems continuously monitor neural feedback
+to adjust stimulation parameters in real-time, thereby enhancing the precision
+and effectiveness of visual restoration. Closed-loop systems mimic the natural
+feedback mechanisms of the human visual system, providing a more responsive and
+user-friendly experience. Recent research has demonstrated the efficacy of these
+systems in improving the visual outcomes for users, as they can dynamically
+adapt to changes in the environment and the user's neural responses
+~\cite{leviEditorialClosedLoopSystems2018}.
+
+Additionally, innovations in wireless technology have enabled the development of
+untethered visual cortical prostheses. Wireless systems eliminate the need for
+external wires, which not only improves the comfort and aesthetics of the
+prostheses but also reduces the risk of infections and mechanical failures.
+Advancements in wireless power transfer and data communication have made it
+possible to deliver sufficient power and high-fidelity signals to the implants,
+ensuring reliable and efficient
+operation~\cite{rosenfeldTissueResponseChronically2020}.
+
+The integration of multi-modal sensory input is another promising development in
+this field. By incorporating inputs from other senses, such as auditory or
+tactile feedback, visual cortical prostheses can provide a more holistic sensory
+experience. This multi-modal approach leverages the brain's ability to integrate
+information from different sensory modalities, potentially enhancing the overall
+perceptual experience and aiding in the interpretation of visual scenes
+~\cite{wanArtificialSensoryNeuron2020}.
+
+In conclusion, the technological advancements in electrode design,
+microfabrication, artificial intelligence, closed-loop systems, wireless
+technology, and multi-modal sensory integration are significantly advancing the
+field of visual cortical prostheses. These innovations are crucial for
+developing more effective, reliable, and user-friendly devices that can better
+restore vision for individuals with severe visual impairments. Continued
+research and development in these areas promise to further enhance the
+capabilities and accessibility of visual cortical prostheses, paving the way for
+their widespread clinical application.
 
 \section{AI Integration}\label{sec:ai_integration}
-Discusses the role of AI in processing and enhancing visual data, optimizing phosphene patterns, and emulating normal brain processing.
+Discusses the role of AI in processing and enhancing visual data, optimizing
+phosphene patterns, and emulating normal brain processing.
 
 \section{Comparison with Natural Systems}\label{sec:comparison}
-Explores the differences in processing between prosthetic and natural vision and how these differences impact user experience.
+Explores the differences in processing between prosthetic and natural vision and
+how these differences impact user experience.
 
 \section{Limitations and Challenges}\label{sec:limitations}
-Details current drawbacks, biocompatibility issues, and areas requiring improvement in visual cortical prosthesis technology.
+Details current drawbacks, biocompatibility issues, and areas requiring
+improvement in visual cortical prosthesis technology.
 
 \section{Articles Analysis}\label{sec:articles}
-Analyzes key articles related to the topic, summarizing their contributions to understanding visual cortical prostheses.
+Analyzes key articles related to the topic, summarizing their contributions to
+understanding visual cortical prostheses.
 
 \subsection{Article 1}
-``Towards biologically plausible phosphene simulation for the differentiable optimization of visual cortical prostheses''~\cite{vandergrintenBiologicallyPlausiblePhosphene2024}.
+``Towards biologically plausible phosphene simulation for the differentiable
+optimization of visual cortical
+prostheses''~\cite{vandergrintenBiologicallyPlausiblePhosphene2024}.
 
 \subsection{Article 2}
 ``New Vision for Visual Prostheses''~\cite{farnumNewVisionVisual2020}.
 
 \subsection{Article 3}
-``Toward a personalized closed-loop stimulation of the visual cortex: Advances and challenges''~\cite{graniPersonalizedClosedloopStimulation2022}.
+``Toward a personalized closed-loop stimulation of the visual cortex: Advances
+and challenges''~\cite{graniPersonalizedClosedloopStimulation2022}.
 
 \section{Objective}\label{sec:objective}
-Provides a comprehensive overview of the current state and future potential of visual cortical prostheses, highlighting technological capabilities, AI integration, and challenges.
+Provides a comprehensive overview of the current state and future potential of
+visual cortical prostheses, highlighting technological capabilities, AI
+integration, and challenges.
 
 \section{Strategy to Compose Relevant Literature}\label{sec:strategy}
-Describes the strategy for compiling and analyzing relevant literature, using categories like Technological Advances, AI Integration, Comparison with Natural Systems, and Limitations and Challenges.
+Describes the strategy for compiling and analyzing relevant literature, using
+categories like Technological Advances, AI Integration, Comparison with Natural
+Systems, and Limitations and Challenges.
 
 \section{Conclusion}\label{sec:conclusion}
-Summarizes the key findings of the review and proposes future research directions.
+Summarizes the key findings of the review and proposes future research
+directions.
 
 \printbibliography%
 
