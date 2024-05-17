@@ -10,6 +10,7 @@
 \usepackage[backend=biber,style=ieee]{biblatex}
 \usepackage[hidelinks]{hyperref}
 \PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
+\usepackage{todonotes} % TODOs
 
 % Page setup
 \geometry{margin=1in}
@@ -52,7 +53,7 @@
     \end{onecolabstract}
     \vspace{1cm}
 ]
-
+\listoftodos% Remove this line when you're done with the document, or uncomment if used
 \section{Introduction}\label{sec:intro}
 \subsection{Background}
 The field of neuroprosthetics has witnessed remarkable progress, particularly
@@ -277,6 +278,8 @@ environments~\cite{romeniMachineLearningFramework2021}.
 
 \subsubsection*{Real-Time Data Processing}
 [Add relevant text here if available]
+
+\todo[inline]{This is where I left off last time.}
 
 \subsubsection*{Predictive Modeling}
 [Add relevant text here if available]
