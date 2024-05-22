@@ -314,38 +314,41 @@ latency~\cite{nurmikkoChallengesLargeScaleCortical2020}. The processing pipeline
 via cameras, preprocessing the data to reduce noise and enhance relevant
 features, and converting this data into neural stimulation patterns.
 
-\todo[inline]{left off here, add references and more details. See last GPT convo.}
-
 Edge computing plays a crucial role in this pipeline by performing data
 processing closer to the data source. This reduces latency and enhances the
 responsiveness of the prosthetic system, which is particularly important for
-real-time applications such as navigation in dynamic environments. By offloading
-computational tasks from centralized servers to local devices, edge computing
-ensures that visual data is processed swiftly, enabling immediate feedback to
-the user.
+real-time applications such as navigation in dynamic
+environments~\cite{wangDeepLearningEdge2020}. By offloading computational tasks
+from centralized servers to local devices, edge computing ensures that visual
+data is processed swiftly, enabling immediate feedback to the user.
 
 Another important component is the use of adaptive algorithms that can
 dynamically adjust to changes in the visual environment. These algorithms
 leverage feedback from the user's interactions with the prosthetic system to
-continuously improve accuracy and effectiveness. For example, real-time
-adjustments can be made to the stimulation patterns based on environmental
-factors such as lighting conditions and the presence of moving objects, ensuring
-that the visual output remains consistent and coherent.
+continuously improve accuracy and
+effectiveness~\cite{pio-lopezVisualCorticalProsthesis2021b}. For example,
+real-time adjustments can be made to the stimulation patterns based on
+environmental factors such as lighting conditions and the presence of moving
+objects, ensuring that the visual output remains consistent and
+coherent~\cite{fylstraHumanprosthesisCooperationCombining2022}.
 
 Additionally, advancements in sensor technology have significantly contributed
 to real-time data processing capabilities. High-resolution cameras and depth
 sensors provide detailed visual information, which is essential for generating
 precise and informative neural signals. These sensors can capture a wide range
 of visual cues, including color, depth, and motion, which are then processed to
-create a comprehensive visual experience for the user.
+create a comprehensive visual experience for the
+user~\cite{rueckauerExperiencingProstheticVision2022}.
 
 Real-time data processing also benefits from the development of specialized
 hardware accelerators, such as Graphics Processing Units (GPUs) and Field
-Programmable Gate Arrays (FPGAs). These devices are optimized for parallel
-processing tasks and can handle the intensive computational demands of real-time
-visual data processing. By utilizing these hardware accelerators, visual
-cortical prostheses can achieve the necessary processing speeds to provide
-immediate and accurate visual feedback.
+Programmable Gate Arrays
+(FPGAs)~\cite{springerOnDeviceDeepLearning2021,fengDesignOnlineBrainComputer2020}
+These devices are optimized for parallel processing tasks and can handle the
+intensive computational demands of real-time visual data processing. By
+utilizing these hardware accelerators, visual cortical prostheses can achieve
+the necessary processing speeds to provide immediate and accurate visual
+feedback.
 
 In summary, real-time data processing in visual cortical prostheses involves a
 combination of high-speed computing, edge computing, adaptive algorithms,
@@ -356,10 +359,11 @@ experience for users. This seamless integration of hardware and software
 components is crucial for the ongoing development and enhancement of visual
 prosthetic systems.
 
+\subsection{Deep Learning Algorithms in Prosthetic Vision}
+\todo[inline]{left of here last time.}
 \subsubsection*{Predictive Modeling}
 [Add relevant text here if available]
 
-\subsection{Deep Learning Algorithms in Prosthetic Vision}
 \subsubsection*{Convolutional Neural Networks (CNNs)}
 CNNs are employed to process and classify visual inputs, enhancing the ability
 of the prosthetic system to interpret complex visual scenes and improve object
