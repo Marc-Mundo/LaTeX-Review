@@ -239,7 +239,7 @@ Two-photon microscopy allows for deep imaging of living brain tissue with high
 spatial resolution. This technique is particularly useful for observing the
 interactions between electrodes and neural tissue over time, providing insights
 that can guide the design and optimization of electrode
-arrays~\cite{yangIntegratedMicroprismMicroelectrode}.
+arrays~\cite{yangIntegratedMicroprismMicroelectrode2024}.
 
 Furthermore, the development of NIR-II semiconducting polymers has enhanced in
 vivo high-resolution imaging capabilities. These polymers offer excellent
@@ -359,33 +359,6 @@ experience for users. This seamless integration of hardware and software
 components is crucial for the ongoing development and enhancement of visual
 prosthetic systems.
 
-\subsection{Deep Learning Algorithms in Prosthetic Vision}
-\todo[inline]{left of here last time.}
-\subsubsection*{Predictive Modeling}
-[Add relevant text here if available]
-
-\subsubsection*{Convolutional Neural Networks (CNNs)}
-CNNs are employed to process and classify visual inputs, enhancing the ability
-of the prosthetic system to interpret complex visual scenes and improve object
-recognition capabilities.
-
-\subsubsection*{Recurrent Neural Networks (RNNs)}
-RNNs, including LSTM (Long Short-Term Memory) networks, are used to handle
-sequential data, making it possible to maintain temporal continuity in visual
-perception and improve the user's ability to track moving objects.
-
-\subsubsection*{Generative Adversarial Networks (GANs)}
-GANs are utilized to generate realistic phosphene patterns by training on large
-datasets of visual scenes, improving the fidelity and natural appearance of the
-visual output.
-
-\subsubsection*{Multidimensional Graph Neural Networks (GNNs)}
-GNNs are leveraged to model and interpret complex relationships within
-multidimensional data, enhancing the system's ability to understand and process
-spatial and relational information. This capability improves the prosthetic
-system's performance in recognizing patterns and structures within the visual
-input, leading to more accurate and context-aware visual perception.
-
 \subsection{Other Functional Improvements}
 Another significant advancement is the implementation of closed-loop systems in
 visual cortical prostheses. These systems continuously monitor neural feedback
@@ -419,6 +392,72 @@ scenes~\cite{wanArtificialSensoryNeuron2020}.
 \section{AI Integration}\label{sec:ai_integration}
 Discusses the role of AI in processing and enhancing visual data, optimizing
 phosphene patterns, and emulating normal brain processing.
+
+\subsection{Deep Learning Algorithms in Prosthetic Vision}
+\subsubsection*{Predictive Modeling}
+Predictive modeling plays a crucial role in prosthetic vision by leveraging
+various deep learning algorithms to enhance visual perception for users. These
+models are designed to predict and interpret visual inputs, creating a seamless
+and coherent visual experience. By utilizing large datasets and advanced neural
+network architectures, predictive modeling enables the prosthetic system to
+anticipate and adapt to dynamic visual environments. Key deep learning
+algorithms are employed in predictive modeling, including
+Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs),
+Generative Adversarial Networks (GANs), and Multidimensional Graph Neural
+Networks (GNNs), each contributing uniquely to improving the functionality and
+performance of visual cortical prostheses.
+
+\subsubsection*{Convolutional Neural Networks (CNNs)}
+CNNs are employed to process and classify visual inputs, enhancing the ability
+of the prosthetic system to interpret complex visual scenes and improve object
+recognition capabilities. CNNs are particularly effective at identifying spatial
+hierarchies in images through layers of convolutions that capture features like
+edges, textures, and shapes. By training on large datasets, CNNs learn to
+recognize a wide range of objects and scenes, enabling the prosthetic system to
+provide users with detailed and accurate visual
+information~\cite{petrosyanDecodingInterpretingCortical2021a}. This improves the
+user's ability to navigate and interact with their environment by providing
+clearer and more recognizable visual
+cues~\cite{maheswaranathanInterpretingRetinalNeural2023}.
+
+\subsubsection*{Recurrent Neural Networks (RNNs)}
+RNNs, including LSTM (Long Short-Term Memory) networks, are used to handle
+sequential data, making it possible to maintain temporal continuity in visual
+perception and improve the user's ability to track moving objects. Unlike CNNs,
+which focus on spatial relationships, RNNs excel at processing temporal
+sequences. They retain information over time, allowing them to predict future
+frames based on past visual data. This capability is essential for maintaining a
+continuous and stable visual experience, especially when tracking dynamic scenes
+or moving objects, thereby enhancing the user's perception of motion and
+improving their ability to react to changes in their
+environment~\cite{nayebiRecurrentConnectionsPrimate2022, liaoBridgingGapsResidual2016}.
+
+\subsubsection*{Generative Adversarial Networks (GANs)}
+GANs are utilized to generate realistic phosphene patterns by training on large
+datasets of visual scenes, improving the fidelity and natural appearance of the
+visual output. A GAN consists of two neural networks, a generator and a
+discriminator, which are trained together in a competitive process. The
+generator creates synthetic images that the discriminator attempts to
+distinguish from real images. Through this adversarial training, GANs learn to
+produce high-quality, realistic images that can be used to simulate
+phosphenes—patterns of light perceived by the visual
+cortex~\cite{goodfellowGenerativeAdversarialNetworks2020,elnabawyPVGANGenerativeAdversarial2022}.
+This enhances the naturalness and coherence of the visual scenes presented to
+the user, making the prosthetic vision more similar to natural sight.
+
+\subsubsection*{Multidimensional Graph Neural Networks (GNNs)}
+GNNs are leveraged to model and interpret complex relationships within
+multidimensional data, enhancing the system's ability to understand and process
+spatial and relational information. GNNs extend traditional neural networks by
+operating on graph-structured data, which can represent the spatial
+relationships between objects in a scene. This allows the prosthetic system to
+better understand the context and interactions within the visual input. By
+capturing these intricate relationships, GNNs improve the prosthetic's ability
+to recognize patterns, structures, and spatial hierarchies, leading to more
+accurate and context-aware visual perception. This is particularly useful in
+complex environments where understanding the spatial arrangement of objects is
+crucial for navigation and
+interaction~\cite{subramanianGraphConvolutionalNetworks2020,wuComprehensiveSurveyGraph2021}.
 
 \section{Comparison with Natural Systems}\label{sec:comparison}
 Explores the differences in processing between prosthetic and natural vision and
