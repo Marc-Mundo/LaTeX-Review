@@ -13,6 +13,7 @@
 % Set marginparwidth for todonotes
 \setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
 \usepackage{todonotes} % TODOs
+\usepackage{tcolorbox} % For colored boxes
 
 % Page setup
 \geometry{margin=1in}
@@ -359,6 +360,47 @@ experience for users. This seamless integration of hardware and software
 components is crucial for the ongoing development and enhancement of visual
 prosthetic systems.
 
+% Add the summary box at the end of the Technological Advances section
+\begin{figure*}[htbp]
+      \begin{tcolorbox}[
+                  title=Technological Advances in Visual Cortical Prostheses,
+                  colframe=gray!50, % Border color
+                  colback=gray!10, % Background color
+                  coltitle=white, % Title color
+                  colbacktitle=black!50, % Title background color
+                  fonttitle=\bfseries,
+                  sharp corners=all,
+                  width=\textwidth
+            ]
+            \begin{itemize}
+                  \item \textbf{Advancements in Biomaterials and Electrode Design}
+                        \begin{itemize}
+                              \item \textbf{Conductive Polymers:} PEDOT:PSS, Polyaniline (PANI), Polypyrrole (PPy)
+                              \item \textbf{Nanotechnology:} Carbon Nanotubes (CNTs), Graphene, Gold Nanostructures
+                              \item \textbf{3D Printing:} Customizable and high-precision electrode arrays
+                        \end{itemize}
+
+                  \item \textbf{Improved Signal Processing and Integration}
+                        \begin{itemize}
+                              \item \textbf{High-Resolution Imaging:} Optical Coherence Tomography (OCT), Functional Magnetic Resonance Imaging (fMRI), Two-photon microscopy, NIR-II semiconducting polymers
+                              \item \textbf{Wireless Communication:} Biphasic Quasistatic Brain Communication (BP-QBC), Feed-forward Neural Networks, Graph Neural Networks (GNNs)
+                        \end{itemize}
+
+                  \item \textbf{Software and Algorithmic Enhancements}
+                        \begin{itemize}
+                              \item \textbf{Real-Time Data Processing:} Edge computing, adaptive algorithms, advanced sensors, hardware accelerators (GPUs and FPGAs)
+                        \end{itemize}
+
+                  \item \textbf{Other Functional Improvements}
+                        \begin{itemize}
+                              \item \textbf{Closed-Loop Feedback Systems:} Dynamic adjustment of stimulation parameters
+                              \item \textbf{Multi-Modal Sensory Integration:} Incorporation of auditory and tactile feedback
+                              \item \textbf{Neuroplasticity and Rehabilitation:} Training protocols to enhance neural integration
+                        \end{itemize}
+            \end{itemize}
+      \end{tcolorbox}
+\end{figure*}
+
 \subsection{Other Functional Improvements}
 In recent years, there have been several significant functional improvements in
 visual cortical prostheses. These advancements include the development of
@@ -394,8 +436,6 @@ reorganization can enhance the integration and functionality of prosthetic
 devices. These programs often involve specific training protocols designed to
 help users better interpret and respond to visual stimuli, ultimately improving
 their overall visual experience.
-
-\todo[inline]{Design a table or a colored box to summarize the technological advances.}
 
 \section{AI Integration}\label{sec:ai_integration}
 Discusses the role of AI in processing and enhancing visual data, optimizing
