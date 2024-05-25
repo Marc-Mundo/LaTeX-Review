@@ -30,5 +30,8 @@ dist/
 .cspell/
 *-workspace
 
+# Other files
+*.py
+
 # folder(s)
 #/images*
