@@ -116,13 +116,13 @@
        id="text16-7"><tspan
          sodipodi:role="line"
          id="tspan16-3"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="57.918179"
          y="82.152077">Stimulation</tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="57.918179"
-         y="87.443741"
+         y="87.684822"
          id="tspan17">Parameters</tspan></text>
     <rect
        style="fill:#01ff80;fill-opacity:0.496222;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
@@ -141,13 +141,13 @@
        id="text16-49"><tspan
          sodipodi:role="line"
          id="tspan16-45"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="108.5499"
          y="81.724197">Summing</tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="108.5499"
-         y="87.015862"
+         y="87.256943"
          id="tspan20">Renderings</tspan></text>
     <rect
        style="fill:#bf01ff;fill-opacity:0.496222;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
@@ -175,13 +175,13 @@
        id="text16-4"><tspan
          sodipodi:role="line"
          id="tspan16-1"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="57.195465"
          y="113.83784">Phosphene</tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="57.195465"
-         y="119.12951"
+         y="119.37058"
          id="tspan18">Characterics</tspan></text>
     <rect
        style="fill:#016bff;fill-opacity:0.496222;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
@@ -209,45 +209,50 @@
        id="text16-5"><tspan
          sodipodi:role="line"
          id="tspan16-8"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="108.56127"
          y="113.41306">Temporal</tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="108.56127"
-         y="118.70473"
+         y="118.94581"
          id="tspan21">Dynamics</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:4.23333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Bold';fill:#000000;fill-opacity:1;stroke-width:0.499999;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0"
-       x="140.5988"
-       y="81.941437"
+       x="159.01801"
+       y="79.172348"
        id="text16-14"><tspan
          sodipodi:role="line"
          id="tspan16-86"
-         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke-width:0.5"
-         x="140.5988"
-         y="81.941437">Modular and </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         x="159.01801"
+         y="79.172348">Modular and </tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke-width:0.5"
-         x="140.5988"
-         y="87.233101"
-         id="tspan22">Open-Source Design</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         x="159.01801"
+         y="84.705093"
+         id="tspan22">Open-Source</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         x="159.01801"
+         y="90.237839"
+         id="tspan1">Design</tspan></text>
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:4.23333px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Bold';fill:#000000;fill-opacity:1;stroke-width:0.499999;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0"
-       x="145.77057"
+       x="160.07149"
        y="113.70058"
        id="text16-0"><tspan
          sodipodi:role="line"
          id="tspan16-18"
-         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke-width:0.5"
-         x="145.77057"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         x="160.07149"
          y="113.70058">Validation and </tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke-width:0.5"
-         x="145.77057"
-         y="118.99224"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         x="160.07149"
+         y="119.23332"
          id="tspan23">Application</tspan></text>
     <rect
        style="fill:#01ffff;fill-opacity:0.496222;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
@@ -275,13 +280,13 @@
        id="text16-1"><tspan
          sodipodi:role="line"
          id="tspan16-4"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="108.53544"
          y="50.00639">Rendering</tspan><tspan
          sodipodi:role="line"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="108.53544"
-         y="55.298054"
+         y="55.539135"
          id="tspan19">Phosphenes</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#RoundedArrow)"
@@ -364,7 +369,7 @@
        id="text16"><tspan
          sodipodi:role="line"
          id="tspan16"
-         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke-width:0.5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Helvetica;-inkscape-font-specification:Helvetica;fill:#000000;fill-opacity:1;stroke-width:0.5"
          x="46.342659"
          y="53.075966">Initialization</tspan></text>
   </g>

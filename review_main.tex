@@ -10,10 +10,15 @@
 \usepackage[backend=biber,style=ieee]{biblatex}
 \usepackage[hidelinks]{hyperref}
 \PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
+
 % Set marginparwidth for todonotes
 \setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
 \usepackage{todonotes} % TODOs
 \usepackage{tcolorbox} % For colored boxes
+
+% Fonts and typography
+\usepackage{helvet} % Load the Helvetica font package
+\renewcommand{\familydefault}{\sfdefault} % Set sans-serif as the default font family
 
 % Page setup
 \geometry{margin=1in}
@@ -24,6 +29,27 @@
 
 % Add bibliography file
 \addbibresource{references.bib}
+
+% Customization to remove url date and format URLs and DOIs
+\AtEveryBibitem{%
+  \ifentrytype{online}{%
+    \clearfield{urldate}%
+    \clearfield{note}%
+  }{}%
+  \ifentrytype{article}{%
+    \clearfield{urldate}%
+  }{}%
+}
+
+\renewbibmacro*{doi+eprint+url}{%
+  \printfield{doi}%
+  \newunit\newblock%
+  \iffieldundef{doi}{%
+    \usebibmacro{eprint}%
+    \newunit\newblock%
+    \usebibmacro{url+urldate}}%
+    {}%
+}
 
 % Title
 \title{State-of-the-Art in Visual Cortical Prostheses: Technological Advances and Future Directions}
@@ -399,10 +425,10 @@ prosthetic systems.
 \begin{figure*}[htbp]
       \begin{tcolorbox}[
                   title=Technological Advances in Visual Cortical Prostheses,
-                  colframe=gray!50, % Border color
-                  colback=gray!10, % Background color
+                  colframe=blue!75, % Border color
+                  colback=blue!10, % Background color
                   coltitle=white, % Title color
-                  colbacktitle=black!50, % Title background color
+                  colbacktitle=blue!50, % Title background color
                   fonttitle=\bfseries,
                   sharp corners=all,
                   width=\textwidth
