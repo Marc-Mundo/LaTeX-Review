@@ -77,6 +77,19 @@ cortex~\cite{vandergrintenBiologicallyPlausiblePhosphene2024a}. However,
 organizing these phosphenes into coherent and interpretable visual patterns
 remains a significant challenge~\cite{merabetWhatBlindnessCan2005}.
 
+% Schematic figure (Bio-render)
+\begin{figure*}[hbt!]
+      \centering
+      \includegraphics[width=0.7\textwidth]{imgs/visual_cortical_prothesis.png}
+      \caption{Functional schematic representation of a visual cortical
+            prosthesis. The visual environment is recorded by a wearable camera
+            and sent to a mobile computer. Electrodes within a brain implant are
+            then selectively activated to stimulate neurons in the primary
+            visual cortex (V1). By leveraging the retinotopic organization of
+            V1, a precise pattern of phosphenes is created, forming a coherent
+            representation of the visual scene~\cite{chenShapePerceptionHighchannelcount2020}.}\label{fig:schematic}
+\end{figure*}
+
 AI has emerged as a pivotal element in enhancing these prosthetic systems. By
 leveraging sophisticated algorithms, AI can optimize stimulation patterns to
 create more naturalistic visual experiences for
@@ -111,15 +124,28 @@ This review addresses the following questions:
 \end{itemize}
 
 \section{Technological Advances}\label{sec:tech_advances}
-\todo[inline]{Maybe add a functional schematic of a visual cortical prosthesis
-      to illustrate the components and their interactions.}
-
 % Diagram figure (inkscape)
 \begin{figure*}[hbt!]
       \centering
       \includegraphics[width=0.7\textwidth]{imgs/block_diagram_vis_prost.png}
-      \caption{Diagram of how a visual cortical prosthesis
-            works.}\label{fig:schematic}
+      \caption{Overview of the Visual Prosthesis Simulation Framework. The
+            simulator is initialized with electrode locations on a visuotopic
+            map of the visual cortex (V1), representing the spatial organization
+            of the visual field. For each frame, it processes stimulation
+            parameters such as amplitude, pulse width, and frequency for each
+            electrode. Using these parameters and electrode locations, it
+            estimates phosphene characteristics, which are rendered on a visual
+            field map considering cortical magnification and activation
+            thresholds. Individual phosphene renderings are summed to produce
+            the simulated prosthetic percept. Temporal dynamics, including
+            delayed onset and offset of perception, are modeled using a leaky
+            integrator. The simulator's modular and open-source design,
+            implemented in Python with PyTorch for example, allows for fast GPU
+            computations and easy integration with external
+            software~\cite{deruytervansteveninckEndtoendOptimizationProsthetic2022}.
+            It is validated through computational and behavioral experiments,
+            incorporating neurophysiological and clinical findings to ensure
+            biological plausibility.}\label{fig:simulator_framework}
 \end{figure*}
 
 Recent years have seen significant progress in the development of visual
