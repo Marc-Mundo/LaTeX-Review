@@ -91,6 +91,16 @@
 
 \section{Introduction}\label{sec:intro}
 \subsection{Background}
+Globally, blindness affects millions of people, with estimates rising from over
+30 million in 2013 to 43.3 million in
+2020~\cite{stevensGlobalPrevalenceVision2013,
+      bourneTrendsPrevalenceBlindness2021}. For certain types of blindness, visual
+prosthetics present a promising avenue for restoring rudimentary vision through
+electrical stimulation of the visual system. The concept of using bioelectrical
+interfaces dates back to the 18th century, with pioneering experiments by LeRoy
+in 1755 and Volta in 1800 demonstrating that electrical stimulation of the eye
+can induce visual sensations.
+
 The field of neuroprosthetics has witnessed remarkable progress, particularly
 with the advent of visual cortical prostheses. These advanced devices offer hope
 for restoring vision in individuals with severe visual impairments by
@@ -105,7 +115,7 @@ organizing these phosphenes into coherent and interpretable visual patterns
 remains a significant challenge~\cite{merabetWhatBlindnessCan2005}.
 
 % Schematic figure (Bio-render)
-\begin{figure*}[hbt!]
+\begin{figure*}[ht!]
       \centering
       \includegraphics[width=0.7\textwidth]{imgs/visual_cortical_prothesis.png}
       \caption{Functional schematic representation of a visual cortical
@@ -154,30 +164,6 @@ This review addresses the following questions:
 \end{itemize}
 
 \section{Technological Advances}\label{sec:tech_advances}
-% Diagram figure (inkscape)
-\begin{figure*}[hbt!]
-      \centering
-      \includegraphics[width=0.7\textwidth]{imgs/block_diagram_vis_prost.png}
-      \caption{Overview of the Visual Prosthesis Simulation Framework. The
-            simulator is initialized with electrode locations on a visuotopic
-            map of the visual cortex (V1), representing the spatial organization
-            of the visual field. For each frame, it processes stimulation
-            parameters such as amplitude, pulse width, and frequency for each
-            electrode. Using these parameters and electrode locations, it
-            estimates phosphene characteristics, which are rendered on a visual
-            field map considering cortical magnification and activation
-            thresholds. Individual phosphene renderings are summed to produce
-            the simulated prosthetic percept. Temporal dynamics, including
-            delayed onset and offset of perception, are modeled using a leaky
-            integrator. The simulator's modular and open-source design,
-            implemented in Python with PyTorch for example, allows for fast GPU
-            computations and easy integration with external
-            software~\cite{deruytervansteveninckEndtoendOptimizationProsthetic2022}.
-            It is validated through computational and behavioral experiments,
-            incorporating neurophysiological and clinical findings to ensure
-            biological plausibility.}\label{fig:simulator_framework}
-\end{figure*}
-
 Recent years have seen significant progress in the development of visual
 cortical prostheses, driven by advancements in both hardware and software
 systems. These innovations are pivotal in enhancing the functionality,
@@ -464,9 +450,11 @@ prosthetic systems.
                         \end{itemize}
             \end{itemize}
       \end{tcolorbox}
+      % \caption{Summary of key technological advancements in the development of
+      %       visual cortical prostheses, highlighting improvements in biomaterials,
+      %       signal processing, software, and functional
+      %       integration.}\label{fig:advances_vcp}
 \end{figure*}
-
-\todo[inline]{Add a caption and label to the summary box?}
 
 \subsection{Other Functional Improvements}
 In recent years, there have been several significant functional improvements in
@@ -505,10 +493,42 @@ help users better interpret and respond to visual stimuli, ultimately improving
 their overall visual experience.
 
 \section{AI Integration}\label{sec:ai_integration}
-Discusses the role of AI in processing and enhancing visual data, optimizing
-phosphene patterns, and emulating normal brain processing.
+The integration of AI in visual prosthesis systems is focused on how deep
+learning algorithms enhance visual data processing, optimize phosphene patterns,
+and emulate normal brain processing. Figure~\ref{fig:simulator_framework}
+provides an overview of the Visual Prosthesis Simulation Framework. This
+framework employs AI to simulate and predict how users perceive visual
+information through a prosthetic device. By integrating deep learning
+algorithms, the system can accurately replicate and enhance visual experiences.
+These different types of neural networks include: CNNs for image recognition,
+RNNs for temporal data processing, GANs for generating realistic visual
+patterns, and GNNs for understanding complex spatial relationships. These
+algorithms collectively improve the capability for image translation, object
+recognition, and scene interpretation.
 
-\todo[inline]{Left off here last time.}
+% Diagram figure (inkscape)
+\begin{figure*}[hbt!]
+      \centering
+      \includegraphics[width=0.7\textwidth]{imgs/block_diagram_vis_prost.png}
+      \caption{Overview of the Visual Prosthesis Simulation Framework. The
+            simulator is initialized with electrode locations on a visuotopic
+            map of the visual cortex (V1), representing the spatial organization
+            of the visual field. For each frame, it processes stimulation
+            parameters such as amplitude, pulse width, and frequency for each
+            electrode. Using these parameters and electrode locations, it
+            estimates phosphene characteristics, which are rendered on a visual
+            field map considering cortical magnification and activation
+            thresholds. Individual phosphene renderings are summed to produce
+            the simulated prosthetic percept. Temporal dynamics, including
+            delayed onset and offset of perception, are modeled using a leaky
+            integrator. The simulator's modular and open-source design,
+            implemented in Python with PyTorch for example, allows for fast GPU
+            computations and easy integration with external
+            software~\cite{deruytervansteveninckEndtoendOptimizationProsthetic2022}.
+            It is validated through computational and behavioral experiments,
+            incorporating neurophysiological and clinical findings to ensure
+            biological plausibility.}\label{fig:simulator_framework}
+\end{figure*}
 
 \subsection{Deep Learning Algorithms in Prosthetic Vision}
 \subsubsection*{Predictive Modeling}
