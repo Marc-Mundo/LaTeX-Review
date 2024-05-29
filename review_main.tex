@@ -496,10 +496,29 @@ their overall visual experience.
 The integration of AI in visual prosthesis systems is focused on how deep
 learning algorithms enhance visual data processing, optimize phosphene patterns,
 and emulate normal brain processing. Figure~\ref{fig:simulator_framework}
-provides an overview of the Visual Prosthesis Simulation Framework. This
+provides an overview of a Visual Prosthesis Simulation Framework based
+on~\cite{deruytervansteveninckEndtoendOptimizationProsthetic2022}. This
 framework employs AI to simulate and predict how users perceive visual
 information through a prosthetic device. By integrating deep learning
 algorithms, the system can accurately replicate and enhance visual experiences.
+
+The functional process of a visual cortical prosthesis in this framework is an
+end-to-end process that includes three main components: an encoder, a phosphene
+simulator, and a decoder. The encoder processes the input image to generate a
+stimulation protocol, which determines the intensity of stimulation for each
+electrode. The phosphene simulator translates this protocol into a simulated
+phosphene vision (SPV) representation, incorporating factors like distortions in
+phosphene positions and brightness variations. Finally, the decoder reconstructs
+the input image from the SPV representation, ensuring accurate interpretation of
+the encoded information.
+
+Optimization is a critical aspect, involving automated and tailored adjustments
+to achieve the best visual reconstruction. Task-specific optimization is
+implemented by using different loss functions, guiding the network to preserve
+relevant information. Constraints such as sparsity can be incorporated to
+minimize adverse effects of electrical stimulation. The modular design allows
+the system to adapt to practical, medical, or biophysical limitations.
+
 These different types of neural networks include: CNNs for image recognition,
 RNNs for temporal data processing, GANs for generating realistic visual
 patterns, and GNNs for understanding complex spatial relationships. These
