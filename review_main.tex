@@ -7,9 +7,11 @@
 \usepackage{setspace}
 \usepackage{abstract}
 \usepackage{titlesec}
-\usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage[backend=biber,style=apa]{biblatex}% Change style to apa
 \usepackage[hidelinks]{hyperref}
 \PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
+\usepackage{fancyhdr} % For custom headers and footers
+\usepackage{lastpage} % For page numbering in the footer
 
 % Set marginparwidth for todonotes
 \setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
@@ -60,40 +62,72 @@
   \\
   Radboud University\\
   Supervisor: Prof.\ dr.\ R.J.A.\ van\ Wezel\\
-  Department: Neurobiology, Donders Centre for Neuroscience
+  Department of Neurobiology, Donders Centre for Neuroscience
 }
 \date{\today}
+
+% Adjust page geometry to balance header and footer
+\geometry{
+  a4paper,
+  left=20mm,
+  right=20mm,
+  top=30mm,
+  bottom=30mm,
+  headheight=60.50554pt, % Set the head height
+  headsep=10pt, % Space between header and text
+  footskip=30pt % Space between text and footer
+}
+
+% Define fancyhdr styles
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[L]{\includegraphics[width=5cm, keepaspectratio]{imgs/RU_logo_NL_cropped.png}}
+  \fancyhead[R]{\fontsize{9}{11}\selectfont \textbf{Systematic Review in Neuroscience} \\ NWI-BM059}
+  \fancyfoot[L]{\fontsize{9}{11}\selectfont Radboud University}
+  \fancyfoot[C]{\fontsize{9}{11}\selectfont \thepage\ of~\pageref{LastPage}}
+  \fancyfoot[R]{\fontsize{9}{11}\selectfont June 2024}
+  \renewcommand{\footrulewidth}{0.3pt}
+}
+
+\fancypagestyle{rest}{
+  \fancyhf{}
+  \fancyhead[L]{\fontsize{9}{11}\selectfont Systematic Review}
+  \fancyhead[R]{\fontsize{9}{11}\selectfont State-of-the-Art in Visual Cortical Prostheses}
+  \fancyfoot[L]{\fontsize{9}{11}\selectfont Radboud University}
+  \fancyfoot[C]{\fontsize{9}{11}\selectfont \thepage\ of~\pageref{LastPage}}
+  \fancyfoot[R]{\fontsize{9}{11}\selectfont June 2024}
+  \renewcommand{\footrulewidth}{0.3pt}
+}
+% \setlength{\headheight}{60.50554pt}
+% % Adjust the head height as suggested by fancyhdr
 
 % Document
 \begin{document}
 
+\pagestyle{plain}% Default plain page style for the list of TODOs
 \listoftodos% Remove this line before submission
+\clearpage%To make sure the todo list is on a separate page without fancyhdr
 
+\newpage% To make sure the todo list is on a separate page without fancyhdr
+
+% Title and abstract
 \twocolumn[
       \maketitle
+      \thispagestyle{firstpage} % Apply first page style after title
       \begin{onecolabstract}
-            \noindent Visual cortical prostheses represent a revolutionary
-            technology within the field of neuro\-prosthetics, aimed at restoring
-            vision for individuals with visual impairments through direct neural
-            interfaces. This review systematically explores the current
-            capabilities, limitations, and future prospects of visual cortical
-            prostheses, with a focus on the integration of artificial intelligence
-            (AI) to enhance functionality and effectiveness. Key topics include the
-            optimization of phosphene patterns, real-time image processing, and
-            comparisons with other types of prosthetic devices. The goal is to
-            provide a comprehensive overview of the state-of-the-art in visual
-            cortical prostheses and propose future research directions.
+            \noindent Visual cortical prostheses represent a revolutionary technology within the field of neuro\-prosthetics, aimed at restoring vision for individuals with visual impairments through direct neural interfaces. This review systematically explores the current capabilities, limitations, and future prospects of visual cortical prostheses, with a focus on the integration of artificial intelligence (AI) to enhance functionality and effectiveness. Key topics include the optimization of phosphene patterns, real-time image processing, and comparisons with other types of prosthetic devices. The goal is to provide a comprehensive overview of the state-of-the-art in visual cortical prostheses and propose future research directions.
       \end{onecolabstract}
-      \textbf{Keywords:} Visual cortical prostheses, neuroprosthetics, artificial
-      intelligence, phosphene patterns, real-time image processing
+      \textbf{Keywords:} Visual cortical prostheses, neuroprosthetics, artificial intelligence, phosphene patterns, real-time image processing
       \vspace{1cm}
 ]
 
+% Ensure first page style is applied until the first page is full
+\thispagestyle{firstpage}
 \section{Introduction}\label{sec:intro}
 \subsection{Background}
 Globally, blindness affects millions of people, with estimates rising from over
 30 million in 2013 to 43.3 million in
-2020~\cite{stevensGlobalPrevalenceVision2013,
+2020~\parencite{stevensGlobalPrevalenceVision2013,
       bourneTrendsPrevalenceBlindness2021}. For certain types of blindness, visual
 prosthetics present a promising avenue for restoring rudimentary vision through
 electrical stimulation of the visual system. The concept of using bioelectrical
@@ -110,9 +144,11 @@ visual information from the external environment into neural signals that the
 brain can process, effectively bypassing damaged visual pathways. The core
 technology involves the generation of phosphenes---perceived spots of light
 resulting from electrical stimulation of the visual
-cortex~\cite{vandergrintenBiologicallyPlausiblePhosphene2024a}. However,
+cortex~\parencite{vandergrintenBiologicallyPlausiblePhosphene2024a}. However,
 organizing these phosphenes into coherent and interpretable visual patterns
-remains a significant challenge~\cite{merabetWhatBlindnessCan2005}.
+remains a significant challenge~\parencite{merabetWhatBlindnessCan2005}.
+
+\pagestyle{rest} % Apply rest page style from here
 
 % Schematic figure (Bio-render)
 \begin{figure*}[ht!]
@@ -124,20 +160,20 @@ remains a significant challenge~\cite{merabetWhatBlindnessCan2005}.
             then selectively activated to stimulate neurons in the primary
             visual cortex (V1). By leveraging the retinotopic organization of
             V1, a precise pattern of phosphenes is created, forming a coherent
-            representation of the visual scene~\cite{chenShapePerceptionHighchannelcount2020}.}\label{fig:schematic}
+            representation of the visual scene~\parencite{chenShapePerceptionHighchannelcount2020}.}\label{fig:schematic}
 \end{figure*}
 
 AI has emerged as a pivotal element in enhancing these prosthetic systems. By
 leveraging sophisticated algorithms, AI can optimize stimulation patterns to
 create more naturalistic visual experiences for
-users~\cite{kriegeskorteDeepNeuralNetworks2015}. AI's role extends to real-time
+users~\parencite{kriegeskorteDeepNeuralNetworks2015}. AI's role extends to real-time
 image processing, allowing the prosthesis to adapt to varying visual
-environments and tasks~\cite{marblestoneIntegrationDeepLearning2016}. This
+environments and tasks~\parencite{marblestoneIntegrationDeepLearning2016}. This
 capability is crucial for developing prosthetic systems that closely mimic
 natural vision, providing users with more effective and adaptable solutions. The
 integration of AI not only improves the functionality of these devices but also
 opens new avenues for innovation in how visual information is processed and
-perceived~\cite{gallettiCorticalConnectionsArea2001}.
+perceived~\parencite{gallettiCorticalConnectionsArea2001}.
 
 This review aims to provide a comprehensive analysis of visual cortical
 prostheses, focusing on the role of AI in advancing these prosthetics. By
@@ -163,6 +199,34 @@ This review addresses the following questions:
             vision and natural visual processing within the human brain?
 \end{itemize}
 
+\subsection{Key Articles}\label{sec:key_articles}
+To ground this review, several key articles have been selected that highlight
+the current state and advancements in visual cortical prostheses:
+\begin{itemize}
+      \item Van der Grinten et al. (2024) discuss the simulation of phosphene
+            patterns for optimizing visual
+            experiences~\parencite{vandergrintenBiologicallyPlausiblePhosphene2024a}.
+      \item Farnum \& Pelled (2020) review the advancements in microelectronic
+            devices and the integration of AI for enhanced visual
+            prostheses~\parencite{farnumNewVisionVisual2020}.
+      \item Grani et al. (2022) explore closed-loop stimulation strategies for
+            real-time adjustments in visual
+            prostheses~\parencite{graniPersonalizedClosedloopStimulation2022}.
+\end{itemize}
+
+\subsection{Objectives}\label{sec:objectives}
+The primary objectives of this review are:
+\begin{itemize}
+      \item To synthesize recent technological advancements in visual cortical
+            prostheses.
+      \item To evaluate the integration and impact of AI in enhancing these
+            prosthetic systems.
+      \item To compare visual cortical prostheses with other prosthetic devices
+            and natural vision.
+      \item To identify current limitations and propose future research
+            directions.
+\end{itemize}
+
 \section{Technological Advances}\label{sec:tech_advances}
 Recent years have seen significant progress in the development of visual
 cortical prostheses, driven by advancements in both hardware and software
@@ -179,7 +243,7 @@ significantly improve these aspects.
 \subsubsection*{Conductive Polymers}
 The development of flexible and biocompatible electrodes allows for better
 integration with neural tissue, reducing the risk of damage and increasing the
-longevity of the implants~\cite{xiangFlexibleThreedimensionalElectrode2016}.
+longevity of the implants~\parencite{xiangFlexibleThreedimensionalElectrode2016}.
 Conductive polymers have been instrumental in advancing the design and
 functionality of these electrodes.
 
@@ -188,21 +252,21 @@ polystyrene sulfonate), which has been widely used due to its excellent
 electrical conductivity, flexibility, and biocompatibility. PEDOT:PSS coatings
 on electrodes improve signal transduction and reduce impedance, which enhances
 the quality of neural recordings and
-stimulation~\cite{rivnayHighperformanceTransistorsBioelectronics2015}.
+stimulation~\parencite{rivnayHighperformanceTransistorsBioelectronics2015}.
 
 Another significant advancement is the use of polyaniline (PANI), a conductive
 polymer known for its tunable conductivity and biocompatibility. PANI can be
 chemically modified to optimize its electrical properties, making it suitable
 for long-term neural interfacing applications. Its use in electrode design has
 shown promising results in maintaining stable performance over extended
-periods~\cite{almuflehHighlyFlexiblePolyanilineBased2021}.
+periods~\parencite{almuflehHighlyFlexiblePolyanilineBased2021}.
 
 Polypyrrole (PPy) is another conductive polymer that has been extensively
 studied for neural applications. PPy-based electrodes offer a unique combination
 of electrical conductivity and mechanical properties that facilitate close
 contact with neural tissue. Additionally, PPy can be doped with various
 bioactive molecules to promote tissue integration and reduce inflammatory
-responses~\cite{zareElectroconductiveMultifunctionalPolypyrrole2021a}.
+responses~\parencite{zareElectroconductiveMultifunctionalPolypyrrole2021a}.
 
 These advancements in conductive polymers are crucial for the development of
 next-generation neural prostheses, offering improved performance,
@@ -212,7 +276,7 @@ biocompatibility, and longevity.
 Advances in microfabrication have enabled the creation of high-density electrode
 arrays that can stimulate the visual cortex with greater precision, offering the
 potential for more detailed and coherent visual
-experiences~\cite{ryuSpatiallyConfinedResponses2020}.
+experiences~\parencite{ryuSpatiallyConfinedResponses2020}.
 
 Nanotechnology has introduced several innovative approaches to enhance the
 performance and integration of electrodes in visual cortical prostheses. One
@@ -220,7 +284,7 @@ such approach is the use of carbon nanotubes (CNTs), which possess exceptional
 electrical conductivity and mechanical strength. CNTs can be incorporated into
 electrode designs to improve signal transmission and reduce impedance, thereby
 enhancing the quality of neural
-stimulation~\cite{alegretThreeDimensionalConductiveScaffolds2018}.
+stimulation~\parencite{alegretThreeDimensionalConductiveScaffolds2018}.
 
 Another promising implementation is the use of graphene, a two-dimensional
 material known for its outstanding electrical and thermal properties.
@@ -228,14 +292,14 @@ Graphene-based electrodes have shown excellent biocompatibility and flexibility,
 which are crucial for long-term implantation and stable neural interfaces. The
 incorporation of graphene into electrode arrays allows for better integration
 with neural tissue and more precise stimulation of the visual
-cortex~\cite{luGraphenebasedNeurotechnologiesAdvanced2018}.
+cortex~\parencite{luGraphenebasedNeurotechnologiesAdvanced2018}.
 
 Additionally, gold nanostructures have been utilized to enhance electrode
 performance. Gold nanoparticles and nanowires can be used to modify the surface
 of electrodes, increasing their surface area and improving their electrical
 properties. This modification can lead to more efficient charge transfer and
 lower stimulation thresholds, resulting in more effective and reliable neural
-stimulation~\cite{zareGoldNanostructuresSynthesis2022}.
+stimulation~\parencite{zareGoldNanostructuresSynthesis2022}.
 
 These nanotechnology-based advancements are paving the way for the development
 of more sophisticated and effective visual cortical prostheses, providing users
@@ -247,13 +311,13 @@ visual cortical prostheses, particularly in the fabrication of electrodes. 3D
 printing offers unparalleled precision and customization capabilities, allowing
 for the creation of complex and highly detailed electrode arrays that can be
 tailored to the unique anatomical features of individual
-patients~\cite{guoImplantableLiquidMetalbased2017}.
+patients~\parencite{guoImplantableLiquidMetalbased2017}.
 
 This technology enables the production of electrodes that conform to the
 specific geometry of the cortical surface, improving contact and integration
 with neural tissue, thereby enhancing the accuracy of neural stimulation and
 minimizing potential damage to surrounding
-tissues~\cite{liuSoftElasticHydrogelbased2019}. Advances in 3D printing
+tissues~\parencite{liuSoftElasticHydrogelbased2019}. Advances in 3D printing
 materials, including biocompatible and conductive inks, have improved the
 performance and longevity of printed electrodes, providing the necessary
 electrical properties while maintaining compatibility with neural tissue.
@@ -261,12 +325,15 @@ electrical properties while maintaining compatibility with neural tissue.
 Additionally, the ability to rapidly prototype and produce electrodes using 3D
 printing reduces manufacturing time and cost, facilitating quicker iterations
 and refinements in electrode design, which accelerates the development
-process~\cite{zhangClimbinginspiredTwiningElectrodes2019}. Recent studies have
-demonstrated the potential in creating flexible and biocompatible electrodes,
-advancing the state-of-the-art in visual cortical prostheses.
+process~\parencite{zhangClimbinginspiredTwiningElectrodes2019}. Recent studies
+have demonstrated the potential in creating flexible and biocompatible
+electrodes, advancing the state-of-the-art in visual cortical prostheses.
 
 \subsection{Improved Signal Processing and Integration}
-Advances in signal processing and integration have been crucial in enhancing the performance and functionality of visual cortical prostheses. High-resolution imaging techniques and sophisticated signal processing algorithms have significantly improved the precision and reliability of these devices.
+Advances in signal processing and integration have been crucial in enhancing the
+performance and functionality of visual cortical prostheses. High-resolution
+imaging techniques and sophisticated signal processing algorithms have
+significantly improved the precision and reliability of these devices.
 
 \subsubsection*{High-Resolution Imaging}
 High-resolution imaging techniques have played a pivotal role in the advancement
@@ -279,30 +346,30 @@ that has been extensively used in neural prosthetics. OCT provides
 cross-sectional images of the brain's surface, enabling detailed visualization
 of cortical layers and structures. This level of detail allows for the precise
 placement of electrodes, improving the effectiveness and safety of neural
-stimulation~\cite{xieUseOpticalCoherence2022}.
+stimulation~\parencite{xieUseOpticalCoherence2022}.
 
 Functional Magnetic Resonance Imaging (fMRI) provides high-resolution images of
 brain activity by detecting changes associated with blood flow. This imaging
 technique is valuable for mapping functional areas of the brain, ensuring that
 electrodes are placed in regions that will yield the most beneficial outcomes
-for the user~\cite{landelleInvestigatingHumanSpinal2021}.
+for the user~\parencite{landelleInvestigatingHumanSpinal2021}.
 
 Two-photon microscopy allows for deep imaging of living brain tissue with high
 spatial resolution. This technique is particularly useful for observing the
 interactions between electrodes and neural tissue over time, providing insights
 that can guide the design and optimization of electrode
-arrays~\cite{yangIntegratedMicroprismMicroelectrode2024}.
+arrays~\parencite{yangIntegratedMicroprismMicroelectrode2024}.
 
 Furthermore, the development of NIR-II semiconducting polymers has enhanced in
 vivo high-resolution imaging capabilities. These polymers offer excellent
 penetration depth and spatial resolution, which are critical for accurate
-diagnostics and therapeutic applications in neural prosthetics~\cite{wangRecentProgressSecond2023,kangNIRIISemiconductingPolymers2023}.
+diagnostics and therapeutic applications in neural prosthetics~\parencite{wangRecentProgressSecond2023,kangNIRIISemiconductingPolymers2023}.
 
 Deep learning techniques have also been employed to enhance the resolution of
 confocal fluorescence microscopy. By using generative models, these techniques
 improve the learning ability of imaging systems in the frequency domain,
 resulting in significantly higher resolution images that are essential for
-detailed neural mapping~\cite{huangEnhancingImageResolution2023}.
+detailed neural mapping~\parencite{huangEnhancingImageResolution2023}.
 
 These high-resolution imaging techniques are integral to the development of more
 precise and effective visual cortical prostheses, facilitating better
@@ -316,7 +383,7 @@ prostheses but also reduces the risk of infections and mechanical failures.
 Advancements in wireless power transfer and data communication have made it
 possible to deliver sufficient power and high-fidelity signals to the implants,
 ensuring reliable and efficient
-operation~\cite{rosenfeldTissueResponseChronically2020}.
+operation~\parencite{rosenfeldTissueResponseChronically2020}.
 
 Recent advancements include the development of biphasic quasistatic brain
 communication (BP-QBC), a technique that significantly reduces power consumption
@@ -324,7 +391,7 @@ while maintaining high data transfer rates. This method leverages
 electro-quasistatic signaling to create a low-power, broadband communication
 channel between wireless neural implants and external devices, offering a
 promising solution for energy-efficient and high-speed data transmission in
-neural prosthetics~\cite{chatterjeeBiphasicQuasistaticBrain2023}.
+neural prosthetics~\parencite{chatterjeeBiphasicQuasistaticBrain2023}.
 
 Another innovative approach is the use of feed-forward neural networks to
 improve the control of brain-machine interfaces. This simpler neural network
@@ -332,13 +399,13 @@ architecture enhances the speed and accuracy of prosthetic control by more
 closely mimicking the natural communication pathways between the brain and the
 body. Such advancements not only improve the functionality of prosthetic devices
 but also enhance their usability for individuals with paralysis or limb
-loss~\cite{willseyRealtimeBrainmachineInterface2022}.
+loss~\parencite{willseyRealtimeBrainmachineInterface2022}.
 
 Moreover, multidimensional graph neural networks (GNNs) have been employed to
 optimize wireless communication policies in neural prosthetics. These networks
 use graph-based representations to manage complex data transmission scenarios,
 improving the efficiency and reliability of wireless communication between
-implants and external devices~\cite{liuMultidimensionalGraphNeural2024}.
+implants and external devices~\parencite{liuMultidimensionalGraphNeural2024}.
 
 These advancements in wireless communication technology are crucial for the
 development of next-generation visual cortical prostheses, providing users with
@@ -352,7 +419,7 @@ have been employed to optimize stimulation patterns and enhance image processing
 capabilities. These algorithms can learn from vast amounts of data to improve
 the accuracy and efficiency of visual signal conversion, making the visual
 experiences more naturalistic and adaptable to different
-environments~\cite{romeniMachineLearningFramework2021}.
+environments~\parencite{romeniMachineLearningFramework2021}.
 
 \subsubsection*{Real-Time Data Processing}
 Real-time data processing is pivotal in the functionality of visual cortical
@@ -362,27 +429,28 @@ visual cortex.
 
 A key aspect of real-time data processing involves the integration of high-speed
 computing systems capable of handling large volumes of visual data with minimal
-latency~\cite{nurmikkoChallengesLargeScaleCortical2020}. The processing pipeline typically includes capturing visual information
-via cameras, preprocessing the data to reduce noise and enhance relevant
-features, and converting this data into neural stimulation patterns.
+latency~\parencite{nurmikkoChallengesLargeScaleCortical2020}. The processing
+pipeline typically includes capturing visual information via cameras,
+preprocessing the data to reduce noise and enhance relevant features, and
+converting this data into neural stimulation patterns.
 
 Edge computing plays a crucial role in this pipeline by performing data
 processing closer to the data source. This reduces latency and enhances the
 responsiveness of the prosthetic system, which is particularly important for
 real-time applications such as navigation in dynamic
-environments~\cite{wangDeepLearningEdge2020}. By offloading computational tasks
-from centralized servers to local devices, edge computing ensures that visual
-data is processed swiftly, enabling immediate feedback to the user.
+environments~\parencite{wangDeepLearningEdge2020}. By offloading computational
+tasks from centralized servers to local devices, edge computing ensures that
+visual data is processed swiftly, enabling immediate feedback to the user.
 
 Another important component is the use of adaptive algorithms that can
 dynamically adjust to changes in the visual environment. These algorithms
 leverage feedback from the user's interactions with the prosthetic system to
 continuously improve accuracy and
-effectiveness~\cite{pio-lopezVisualCorticalProsthesis2021b}. For example,
+effectiveness~\parencite{pio-lopezVisualCorticalProsthesis2021b}. For example,
 real-time adjustments can be made to the stimulation patterns based on
 environmental factors such as lighting conditions and the presence of moving
 objects, ensuring that the visual output remains consistent and
-coherent~\cite{fylstraHumanprosthesisCooperationCombining2022}.
+coherent~\parencite{fylstraHumanprosthesisCooperationCombining2022}.
 
 Additionally, advancements in sensor technology have significantly contributed
 to real-time data processing capabilities. High-resolution cameras and depth
@@ -390,12 +458,12 @@ sensors provide detailed visual information, which is essential for generating
 precise and informative neural signals. These sensors can capture a wide range
 of visual cues, including color, depth, and motion, which are then processed to
 create a comprehensive visual experience for the
-user~\cite{rueckauerExperiencingProstheticVision2022}.
+user~\parencite{rueckauerExperiencingProstheticVision2022}.
 
 Real-time data processing also benefits from the development of specialized
 hardware accelerators, such as Graphics Processing Units (GPUs) and Field
 Programmable Gate Arrays
-(FPGAs)~\cite{springerOnDeviceDeepLearning2021,fengDesignOnlineBrainComputer2020}
+(FPGAs)~\parencite{springerOnDeviceDeepLearning2021,fengDesignOnlineBrainComputer2020}
 These devices are optimized for parallel processing tasks and can handle the
 intensive computational demands of real-time visual data processing. By
 utilizing these hardware accelerators, visual cortical prostheses can achieve
@@ -471,7 +539,7 @@ feedback mechanisms of the human visual system, providing a more responsive and
 user-friendly experience. Recent research has demonstrated the efficacy of these
 systems in improving the visual outcomes for users, as they can dynamically
 adapt to changes in the environment and the user's neural
-responses~\cite{leviEditorialClosedLoopSystems2018}.
+responses~\parencite{leviEditorialClosedLoopSystems2018}.
 
 \subsubsection*{Multi-Modal Sensory Integration}
 The integration of multi-modal sensory input is another promising development in
@@ -480,7 +548,7 @@ tactile feedback, visual cortical prostheses can provide a more holistic sensory
 experience. This multi-modal approach leverages the brain's ability to integrate
 information from different sensory modalities, potentially enhancing the overall
 perceptual experience and aiding in the interpretation of visual
-scenes~\cite{wanArtificialSensoryNeuron2020}.
+scenes~\parencite{wanArtificialSensoryNeuron2020}.
 
 \subsubsection*{Neuroplasticity and Rehabilitation}
 Advancements in understanding neuroplasticity have led to improved
@@ -497,7 +565,7 @@ The integration of AI in visual prosthesis systems is focused on how deep
 learning algorithms enhance visual data processing, optimize phosphene patterns,
 and emulate normal brain processing. Figure~\ref{fig:simulator_framework}
 provides an overview of a Visual Prosthesis Simulation Framework based
-on~\cite{deruytervansteveninckEndtoendOptimizationProsthetic2022}. This
+on~\parencite{deruytervansteveninckEndtoendOptimizationProsthetic2022}. This
 framework employs AI to simulate and predict how users perceive visual
 information through a prosthetic device. By integrating deep learning
 algorithms, the system can accurately replicate and enhance visual experiences.
@@ -543,7 +611,7 @@ recognition, and scene interpretation.
             integrator. The simulator's modular and open-source design,
             implemented in Python with PyTorch for example, allows for fast GPU
             computations and easy integration with external
-            software~\cite{deruytervansteveninckEndtoendOptimizationProsthetic2022}.
+            software~\parencite{deruytervansteveninckEndtoendOptimizationProsthetic2022}.
             It is validated through computational and behavioral experiments,
             incorporating neurophysiological and clinical findings to ensure
             biological plausibility.}\label{fig:simulator_framework}
@@ -571,10 +639,10 @@ hierarchies in images through layers of convolutions that capture features like
 edges, textures, and shapes. By training on large datasets, CNNs learn to
 recognize a wide range of objects and scenes, enabling the prosthetic system to
 provide users with detailed and accurate visual
-information~\cite{petrosyanDecodingInterpretingCortical2021a}. This improves the
+information~\parencite{petrosyanDecodingInterpretingCortical2021a}. This improves the
 user's ability to navigate and interact with their environment by providing
 clearer and more recognizable visual
-cues~\cite{maheswaranathanInterpretingRetinalNeural2023}.
+cues~\parencite{maheswaranathanInterpretingRetinalNeural2023}.
 
 \subsubsection*{Recurrent Neural Networks (RNNs)}
 RNNs, including LSTM (Long Short-Term Memory) networks, are used to handle
@@ -586,7 +654,7 @@ frames based on past visual data. This capability is essential for maintaining a
 continuous and stable visual experience, especially when tracking dynamic scenes
 or moving objects, thereby enhancing the user's perception of motion and
 improving their ability to react to changes in their
-environment~\cite{nayebiRecurrentConnectionsPrimate2022, liaoBridgingGapsResidual2016}.
+environment~\parencite{nayebiRecurrentConnectionsPrimate2022, liaoBridgingGapsResidual2016}.
 
 \subsubsection*{Generative Adversarial Networks (GANs)}
 GANs are utilized to generate realistic phosphene patterns by training on large
@@ -597,7 +665,7 @@ generator creates synthetic images that the discriminator attempts to
 distinguish from real images. Through this adversarial training, GANs learn to
 produce high-quality, realistic images that can be used to simulate
 phosphenes—patterns of light perceived by the visual
-cortex~\cite{goodfellowGenerativeAdversarialNetworks2020,elnabawyPVGANGenerativeAdversarial2022}.
+cortex~\parencite{goodfellowGenerativeAdversarialNetworks2020,elnabawyPVGANGenerativeAdversarial2022}.
 This enhances the naturalness and coherence of the visual scenes presented to
 the user, making the prosthetic vision more similar to natural sight.
 
@@ -613,7 +681,7 @@ to recognize patterns, structures, and spatial hierarchies, leading to more
 accurate and context-aware visual perception. This is particularly useful in
 complex environments where understanding the spatial arrangement of objects is
 crucial for navigation and
-interaction~\cite{subramanianGraphConvolutionalNetworks2020,wuComprehensiveSurveyGraph2021}.
+interaction~\parencite{subramanianGraphConvolutionalNetworks2020,wuComprehensiveSurveyGraph2021}.
 
 \section{Comparison with Other and Natural Systems}\label{sec:comparison}
 Explores the differences in processing between prosthetic and natural vision and
