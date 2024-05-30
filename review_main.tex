@@ -12,6 +12,7 @@
 \PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
 \usepackage{fancyhdr} % For custom headers and footers
 \usepackage{lastpage} % For page numbering in the footer
+\usepackage{xcolor} % For text color
 
 % Set marginparwidth for todonotes
 \setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
@@ -88,25 +89,36 @@
   footskip=30pt % Space between text and footer
 }
 
+% Custom footrule commands
+\newcommand{\blackfootrule}{%
+  \color{black}\makebox[\headwidth]{\rule[0.5ex]{\headwidth}{0.3pt}}%
+}
+
+\newcommand{\grayfootrule}{%
+  \color{gray}\makebox[\headwidth]{\rule[0.5ex]{\headwidth}{0.3pt}}%
+}
+
 % Define fancyhdr styles
 \fancypagestyle{firstpage}{
   \fancyhf{}
   \fancyhead[L]{\includegraphics[width=5cm, keepaspectratio]{imgs/RU_logo_NL_cropped.png}}
-  \fancyhead[R]{\fontsize{9}{11}\selectfont \textbf{Systematic Review in Neuroscience} \\ NWI-BM059}
-  \fancyfoot[L]{\fontsize{9}{11}\selectfont Radboud University}
-  \fancyfoot[C]{\fontsize{9}{11}\selectfont \thepage\ of~\pageref{LastPage}}
-  \fancyfoot[R]{\fontsize{9}{11}\selectfont June 2024}
+  \fancyhead[R]{\fontsize{10}{12}\selectfont \textbf{Systematic Review in Neuroscience} \\ NWI-BM059}
+  \fancyfoot[L]{\fontsize{8}{10}\selectfont \textcolor{gray}{Radboud University}}
+  \fancyfoot[C]{\fontsize{8}{10}\selectfont \textcolor{gray}{\thepage\ of~\pageref{LastPage}}}
+  \fancyfoot[R]{\fontsize{8}{10}\selectfont \textcolor{gray}{June 2024}}
   \renewcommand{\footrulewidth}{0.3pt}
+  \renewcommand{\footrule}{\blackfootrule}
 }
 
 \fancypagestyle{rest}{
   \fancyhf{}
-  \fancyhead[L]{\fontsize{9}{11}\selectfont Systematic Review}
-  \fancyhead[R]{\fontsize{9}{11}\selectfont State-of-the-Art in Visual Cortical Prostheses}
-  \fancyfoot[L]{\fontsize{9}{11}\selectfont Radboud University}
-  \fancyfoot[C]{\fontsize{9}{11}\selectfont \thepage\ of~\pageref{LastPage}}
-  \fancyfoot[R]{\fontsize{9}{11}\selectfont June 2024}
+  \fancyhead[L]{\fontsize{8}{10}\selectfont \textcolor{gray}{Systematic Review}}
+  \fancyhead[R]{\fontsize{8}{10}\selectfont \textcolor{gray}{State-of-the-Art in Visual Cortical Prostheses}}
+  \fancyfoot[L]{\fontsize{8}{10}\selectfont \textcolor{gray}{Radboud University}}
+  \fancyfoot[C]{\fontsize{8}{10}\selectfont \textcolor{gray}{\thepage\ of~\pageref{LastPage}}}
+  \fancyfoot[R]{\fontsize{8}{10}\selectfont \textcolor{gray}{June 2024}}
   \renewcommand{\footrulewidth}{0.3pt}
+  \renewcommand{\footrule}{\grayfootrule}
 }
 
 % Document
