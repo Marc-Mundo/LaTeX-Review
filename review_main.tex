@@ -7,7 +7,7 @@
 \usepackage{setspace}
 \usepackage{abstract}
 \usepackage{titlesec}
-\usepackage[backend=biber,style=apa]{biblatex}% Change style to apa
+\usepackage[backend=biber,style=apa]{biblatex}% Changed style to apa
 \usepackage[hidelinks]{hyperref}
 \PassOptionsToPackage{hyphens}{url} % Pass hyphens option to url package via hyperref
 \usepackage{fancyhdr} % For custom headers and footers
@@ -17,6 +17,7 @@
 \setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
 \usepackage{todonotes} % TODOs
 \usepackage{tcolorbox} % For colored boxes
+\usepackage{caption} % For custom captions
 
 % Fonts and typography
 \usepackage{helvet} % Load the Helvetica font package
@@ -52,6 +53,15 @@
     \usebibmacro{url+urldate}}%
     {}%
 }
+
+% Customize the caption format
+\captionsetup[figure]{
+    labelfont=bf,           % Bold font for the label
+    labelsep=space           % Use a space as the separator
+}
+
+% Change font size of bibliography entries
+\renewcommand{\bibfont}{\fontsize{7pt}{9pt}\selectfont}% Set font size to 7pt, maybe too small. Change to 8pt if needed. Also adjust actual text size?
 
 % Title
 \title{State-of-the-Art in Visual Cortical Prostheses: Technological Advances and Future Directions}
@@ -98,8 +108,6 @@
   \fancyfoot[R]{\fontsize{9}{11}\selectfont June 2024}
   \renewcommand{\footrulewidth}{0.3pt}
 }
-% \setlength{\headheight}{60.50554pt}
-% % Adjust the head height as suggested by fancyhdr
 
 % Document
 \begin{document}
@@ -154,7 +162,7 @@ remains a significant challenge~\parencite{merabetWhatBlindnessCan2005}.
 \begin{figure*}[ht!]
       \centering
       \includegraphics[width=0.7\textwidth]{imgs/visual_cortical_prothesis.png}
-      \caption{Functional schematic representation of a visual cortical
+      \caption{| Functional schematic representation of a visual cortical
             prosthesis. The visual environment is recorded by a wearable camera
             and sent to a mobile computer. Electrodes within a brain implant are
             then selectively activated to stimulate neurons in the primary
@@ -483,14 +491,16 @@ prosthetic systems.
 \begin{figure*}[htbp]
       \begin{tcolorbox}[
                   title=Technological Advances in Visual Cortical Prostheses,
-                  colframe=blue!75, % Border color
-                  colback=blue!10, % Background color
+                  colframe=gray!30, % Border color
+                  colback=gray!20, % Background color
                   coltitle=white, % Title color
-                  colbacktitle=blue!50, % Title background color
+                  colbacktitle=gray!50, % Title background color
                   fonttitle=\bfseries,
                   sharp corners=all,
-                  width=\textwidth
+                  width=\textwidth,
+                  boxrule=0.5pt % Border width
             ]
+            \fontsize{8pt}{10pt}\selectfont % Set the font size directly
             \begin{itemize}
                   \item \textbf{Advancements in Biomaterials and Electrode Design}
                         \begin{itemize}
@@ -597,7 +607,7 @@ recognition, and scene interpretation.
 \begin{figure*}[hbt!]
       \centering
       \includegraphics[width=0.7\textwidth]{imgs/block_diagram_vis_prost.png}
-      \caption{Overview of the Visual Prosthesis Simulation Framework. The
+      \caption{| Overview of the Visual Prosthesis Simulation Framework. The
             simulator is initialized with electrode locations on a visuotopic
             map of the visual cortex (V1), representing the spatial organization
             of the visual field. For each frame, it processes stimulation
