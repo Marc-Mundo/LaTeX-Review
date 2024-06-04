@@ -143,8 +143,8 @@
 
 % Ensure first page style is applied until the first page is full
 \thispagestyle{firstpage}
-\section{Introduction}\label{sec:intro}
-\subsection{Background}
+\section*{Introduction}\label{sec:intro}
+\subsection*{Background}
 Globally, blindness affects millions of people, with estimates rising from over
 30 million in 2013 to 43.3 million in
 2020~\parencite{stevensGlobalPrevalenceVision2013,
@@ -176,11 +176,15 @@ remains a significant challenge~\parencite{merabetWhatBlindnessCan2005}.
       \includegraphics[width=0.7\textwidth]{imgs/visual_cortical_prothesis.png}
       \caption{| Functional schematic representation of a visual cortical
             prosthesis. The visual environment is recorded by a wearable camera
-            and sent to a mobile computer. Electrodes within a brain implant are
-            then selectively activated to stimulate neurons in the primary
-            visual cortex (V1). By leveraging the retinotopic organization of
-            V1, a precise pattern of phosphenes is created, forming a coherent
-            representation of the visual scene~\parencite{chenShapePerceptionHighchannelcount2020}.}\label{fig:schematic}
+            and sent to a (wireless) mobile computer. Electrodes within a brain
+            implant are then selectively activated to stimulate neurons in the
+            primary visual cortex (V1). By leveraging the retinotopic
+            organization of V1, a precise pattern of phosphenes is created,
+            forming a coherent representation of the visual
+            scene~\parencite{chenShapePerceptionHighchannelcount2020}. (Image:
+            BioRender,
+            \href{https://app.biorender.com/}{https://app.biorender.com/},
+            accessed on 27 May 2024).}\label{fig:schematic}
 \end{figure*}
 
 AI has emerged as a pivotal element in enhancing these prosthetic systems. By
@@ -204,7 +208,7 @@ technological innovation with neuroscientific insights has the profound
 potential to enhance the quality of life for individuals with visual
 impairments.
 
-\subsection{Research Question}
+\subsection*{Research Question}
 This review addresses the following questions:
 \begin{itemize}
       \item What are the current technological advancements in visual cortical
@@ -219,7 +223,7 @@ This review addresses the following questions:
             vision and natural visual processing within the human brain?
 \end{itemize}
 
-\subsection{Key Articles}\label{sec:key_articles}
+\subsection*{Key Articles}\label{sec:key_articles}
 To ground this review, several key articles have been selected that highlight
 the current state and advancements in visual cortical prostheses:
 \begin{itemize}
@@ -234,7 +238,7 @@ the current state and advancements in visual cortical prostheses:
             prostheses~\parencite{graniPersonalizedClosedloopStimulation2022}.
 \end{itemize}
 
-\subsection{Objectives}\label{sec:objectives}
+\subsection*{Objectives}\label{sec:objectives}
 The primary objectives of this review are:
 \begin{itemize}
       \item To synthesize recent technological advancements in visual cortical
@@ -247,13 +251,13 @@ The primary objectives of this review are:
             directions.
 \end{itemize}
 
-\section{Technological Advances}\label{sec:tech_advances}
+\section*{Technological Advances}\label{sec:tech_advances}
 Recent years have seen significant progress in the development of visual
 cortical prostheses, driven by advancements in both hardware and software
 systems. These innovations are pivotal in enhancing the functionality,
 efficiency, and user experience of these devices.
 
-\subsection{Advancements in Biomaterials and Electrode Design}
+\subsection*{Advancements in Biomaterials and Electrode Design}
 One major area of advancement is in electrode design and fabrication.
 Traditional electrodes have been limited by issues such as biocompatibility,
 stability, and the ability to generate precise neural stimulation. Recent
@@ -349,7 +353,7 @@ process~\parencite{zhangClimbinginspiredTwiningElectrodes2019}. Recent studies
 have demonstrated the potential in creating flexible and biocompatible
 electrodes, advancing the state-of-the-art in visual cortical prostheses.
 
-\subsection{Improved Signal Processing and Integration}
+\subsection*{Improved Signal Processing and Integration}
 Advances in signal processing and integration have been crucial in enhancing the
 performance and functionality of visual cortical prostheses. High-resolution
 imaging techniques and sophisticated signal processing algorithms have
@@ -431,7 +435,7 @@ These advancements in wireless communication technology are crucial for the
 development of next-generation visual cortical prostheses, providing users with
 more seamless and reliable neural interfaces.
 
-\subsection{Software and Algorithmic Enhancements}
+\subsection*{Software and Algorithmic Enhancements}
 On the software side, the integration of artificial intelligence (AI) has
 revolutionized the way visual information is processed and interpreted by
 prosthetic systems. AI algorithms, particularly those based on deep learning,
@@ -546,7 +550,7 @@ prosthetic systems.
       %       integration.}\label{fig:advances_vcp}
 \end{figure*}
 
-\subsection{Other Functional Improvements}
+\subsection*{Other Functional Improvements}
 In recent years, there have been several significant functional improvements in
 visual cortical prostheses. These advancements include the development of
 closed-loop feedback systems, the integration of multi-modal sensory input, and
@@ -582,7 +586,7 @@ devices. These programs often involve specific training protocols designed to
 help users better interpret and respond to visual stimuli, ultimately improving
 their overall visual experience.
 
-\section{AI Integration}\label{sec:ai_integration}
+\section*{AI Integration}\label{sec:ai_integration}
 The integration of AI in visual prosthesis systems is focused on how deep
 learning algorithms enhance visual data processing, optimize phosphene patterns,
 and emulate normal brain processing. Figure~\ref{fig:simulator_framework}
@@ -619,7 +623,7 @@ recognition, and scene interpretation.
 \begin{figure*}[hbt!]
       \centering
       \includegraphics[width=0.6\textwidth]{imgs/block_diagram_vis_prost.png}
-      \caption{| Overview of the Visual Prosthesis Simulation Framework. The
+      \caption{| Overview of a Visual Prosthesis Simulation Framework. The
             simulator is initialized with electrode locations on a visuotopic
             map of the visual cortex (V1), representing the spatial organization
             of the visual field. For each frame, it processes stimulation
@@ -639,7 +643,7 @@ recognition, and scene interpretation.
             biological plausibility.}\label{fig:simulator_framework}
 \end{figure*}
 
-\subsection{Deep Learning Algorithms in Prosthetic Vision}
+\subsection*{Deep Learning Algorithms in Prosthetic Vision}
 So why are deep learning algorithms essential for prosthetic vision?
 
 \todo[inline]{Check if the citations are in the right spots.}
@@ -709,11 +713,12 @@ complex environments where understanding the spatial arrangement of objects is
 crucial for navigation and
 interaction~\parencite{subramanianGraphConvolutionalNetworks2020,wuComprehensiveSurveyGraph2021}.
 
-\section{Comparison with Other Visual Systems}\label{sec:comparison}
+\section*{Comparison with Other Visual Systems}\label{sec:comparison}
 Cortical prosthetics offer a unique approach to restoring vision compared to
-earlier retinal and optic nerve implants, such as the devices by companies like
-the \textit{PRIMA system} by Pixium-vision or \textit{Orion} and
-\textit{ARGUSII} (FDA-approved) by Cortigent. Cortical prostheses are
+earlier retinal and optic nerve implants. Devices by companies like the
+\textit{PRIMA system} and \textit{IRIS} systems by Pixium-Vision or the
+\textit{Orion} and \textit{ARGUSII} (FDA-approved) by Second Sight Medical
+Products Inc have already proven their merit. However, cortical prostheses are
 distinguished by their downstream positioning, which provides substantial
 rehabilitative potential for individuals who are blind or visually impaired,
 especially when retinal or optic nerve prostheses are
@@ -723,27 +728,27 @@ degeneration, post-injury compensatory plasticity mechanisms recruit neurons
 from other cortical regions, enabling effective stimulation well beyond the
 onset of injury or disease~\parencite{beyelerLearningSeeAgain2017}.
 
-\subsection{Comparison with Retinal Prostheses}
+\subsection*{Comparison with Retinal Prostheses}
 How do these new systems compare to existing visual prostheses?
 
-\subsection{Comparison with Optic Nerve Prostheses}
+\subsection*{Comparison with Optic Nerve Prostheses}
 
-\subsection{Comparison with Natural Vision}
+\subsection*{Comparison with Natural Vision}
 Plasticity and perceptual learning, how are these phenomena involved in learning
 to see again with a prosthesis?
 
-\section{Limitations and Challenges}\label{sec:limitations}
+\section*{Limitations and Challenges}\label{sec:limitations}
 Details current drawbacks, biocompatibility issues, and areas requiring
 improvement in visual cortical prosthesis technology. Is the vision from ARGUSII
 for instance, any good? How do the number of electrodes matter in visual
 resolution in the experience of the user?
 
-\section{Future Perspectives}\label{sec:future}
+\section*{Future Perspectives}\label{sec:future}
 Provides a comprehensive overview of the current state and future potential of
 visual cortical prostheses, highlighting technological capabilities, AI
 integration, and challenges.
 
-\subsection{Clinical Applications}
+\subsection*{Clinical Applications}
 A caveat is the invasive nature of these cortical devices, which require
 surgical implantation.
 
@@ -754,7 +759,7 @@ surgical implantation.
             individual neural architectures.
 \end{itemize}
 
-\subsection{Ethical and Societal Implications}
+\subsection*{Ethical and Societal Implications}
 \begin{itemize}
       \item Considerations of the ethical implications of advanced neural
             interfacing.
@@ -762,7 +767,7 @@ surgical implantation.
             with visual impairments.
 \end{itemize}
 
-\section{Conclusion}\label{sec:conclusion}
+\section*{Conclusion}\label{sec:conclusion}
 In conclusion, the technological advancements in electrode design,
 microfabrication, artificial intelligence, closed-loop systems, wireless
 technology, and multi-modal sensory integration are significantly advancing the
