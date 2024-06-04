@@ -13,6 +13,7 @@
 \usepackage{fancyhdr} % For custom headers and footers
 \usepackage{lastpage} % For page numbering in the footer
 \usepackage{xcolor} % For text color
+\usepackage{tabularx} % Tabularx package for better table formatting
 
 % Set marginparwidth for todonotes
 \setlength{\marginparwidth}{2cm} % Adjust the marginparwidth
@@ -57,6 +58,10 @@
 
 % Customize the caption format
 \captionsetup[figure]{
+    labelfont=bf,           % Bold font for the label
+    labelsep=space           % Use a space as the separator
+}
+\captionsetup[table]{
     labelfont=bf,           % Bold font for the label
     labelsep=space           % Use a space as the separator
 }
@@ -504,7 +509,7 @@ components is crucial for the ongoing development and enhancement of visual
 prosthetic systems.
 
 % Add the summary box at the end of the Technological Advances section
-\begin{figure*}[htbp]
+\begin{figure*}[ht!]
       \begin{tcolorbox}[
                   title=Technological Advances in Visual Cortical Prostheses,
                   colframe=gray!30, % Border color
@@ -620,7 +625,7 @@ algorithms collectively improve the capability for image translation, object
 recognition, and scene interpretation.
 
 % Diagram figure (inkscape)
-\begin{figure*}[hbt!]
+\begin{figure*}[ht!]
       \centering
       \includegraphics[width=0.6\textwidth]{imgs/block_diagram_vis_prost.png}
       \caption{| Overview of a Visual Prosthesis Simulation Framework. The
@@ -727,6 +732,23 @@ for the longest therapeutic intervention window. Instead of complete neural
 degeneration, post-injury compensatory plasticity mechanisms recruit neurons
 from other cortical regions, enabling effective stimulation well beyond the
 onset of injury or disease~\parencite{beyelerLearningSeeAgain2017}.
+
+\begin{table*}[ht!]
+      \centering
+      \caption{| Comparison of Cortical, Retinal, and Optic Nerve Prostheses}\label{tab:prostheses_comparison}
+      \begin{tabularx}{\textwidth}{|X|X|X|X|}
+            \hline
+            \textbf{Feature}                  & \textbf{Cortical Prostheses}                                                       & \textbf{Retinal Prostheses}                                                    & \textbf{Optic Nerve Prostheses}                                 \\ \hline
+            \textbf{Target Area}              & Visual cortex                                                                      & Retina                                                                         & Optic nerve                                                     \\ \hline
+            \textbf{Surgical Invasiveness}    & Highly invasive (brain surgery)                                                    & Moderately invasive (eye surgery)                                              & Moderately invasive (requires access to the optic nerve)        \\ \hline
+            \textbf{Applicability}            & Suitable for severe visual impairment with retinal or optic nerve damage           & Best for retinal degenerative diseases with some functional retinal cells      & Suitable for optic nerve damage with functional retinal cells   \\ \hline
+            \textbf{Mechanism}                & Direct stimulation of the visual cortex                                            & Stimulation of remaining functional retinal cells                              & Stimulation of the optic nerve fibers                           \\ \hline
+            \textbf{Therapeutic Window}       & Longest, can be effective long after onset of blindness                            & Requires some residual retinal function                                        & Depends on the extent of optic nerve damage                     \\ \hline
+            \textbf{Technological Complexity} & High (phosphene organization and neural plasticity)                                & Moderate (retinal cell stimulation)                                            & High (complexity in targeting optic nerve fibers)               \\ \hline
+            \textbf{Advantages}               & Broad applicability, effective for extensive damage, leverages cortical plasticity & Less invasive, established success in specific diseases, direct visual pathway & Can target optic nerve damage directly, bypasses retinal issues \\ \hline
+            \textbf{Disadvantages}            & Highly invasive surgery, complex visual pattern organization                       & Limited to retinal functionality, less effective with severe damage            & Invasive, technical challenges in precise nerve stimulation     \\ \hline
+      \end{tabularx}
+\end{table*}
 
 \subsection*{Comparison with Retinal Prostheses}
 How do these new systems compare to existing visual prostheses?
