@@ -595,8 +595,8 @@ their overall visual experience.
 The integration of AI in visual prosthesis systems is focused on how deep
 learning algorithms enhance visual data processing, optimize phosphene patterns,
 and emulate normal brain processing. Figure~\ref{fig:simulator_framework}
-provides an overview of a Visual Prosthesis Simulation Framework based
-on~\parencite{deruytervansteveninckEndtoendOptimizationProsthetic2022}. This
+provides an overview of a Visual Prosthesis Simulation Framework based on the
+work by~\textcite{deruytervansteveninckEndtoendOptimizationProsthetic2022}. This
 framework employs AI to simulate and predict how users perceive visual
 information through a prosthetic device. By integrating deep learning
 algorithms, the system can accurately replicate and enhance visual experiences.
@@ -616,13 +616,10 @@ to achieve the best visual reconstruction. Task-specific optimization is
 implemented by using different loss functions, guiding the network to preserve
 relevant information. Constraints such as sparsity can be incorporated to
 minimize adverse effects of electrical stimulation. The modular design allows
-the system to adapt to practical, medical, or biophysical limitations.
-
-These different types of neural networks include: CNNs for image recognition,
-RNNs for temporal data processing, GANs for generating realistic visual
-patterns, and GNNs for understanding complex spatial relationships. These
-algorithms collectively improve the capability for image translation, object
-recognition, and scene interpretation.
+the system to adapt to practical, medical, or biophysical limitations. Some
+designs, such as the one
+by~\textcite{deruytervansteveninckEndtoendOptimizationProsthetic2022}, has been
+made open-source to facilitate collaboration and further development.
 
 % Diagram figure (inkscape)
 \begin{figure*}[ht!]
@@ -649,7 +646,33 @@ recognition, and scene interpretation.
 \end{figure*}
 
 \subsection*{Deep Learning Algorithms in Prosthetic Vision}
-So why are deep learning algorithms essential for prosthetic vision?
+So why are AI algorithms essential for the development of prosthetic vision?
+These algorithmic models are in principle, designed as solutions to low sampling
+resolution. The optimization of phosphene patterns are an area that benefits
+significantly from preprocessing optimizations of image quality. An example of a
+spiking neural network is the NeoCube architecture for obstacle-avoidance
+by~\textcite{guoOptimizationVisualInformation2018}. This architecture is a prime
+example of how an AI system can enhance the user experience by adding increased
+stability and accuracy to the prosthetic system, without the addition of
+additional hardware.
+
+Deep learning models are different kinds of neural networks that are used to
+predict and interpret visual inputs without providing environmental context.
+This is known as saliency mapping, which is an important technique used in deep
+learning to identify and visualize the regions of an input that most
+significantly influence the model's predictions. Within the deep learning domain
+there are however several types of neural networks that are used to enhance the
+capabilities of models in different ways.
+
+Various types of neural networks exist, including Convolutional Neural Networks
+(CNNs) for image recognition, Recurrent Neural Networks (RNNs) for temporal data
+processing, Generative Adversarial Networks (GANs) for generating realistic
+visual patterns, and Graph Neural Networks (GNNs) for understanding complex
+spatial relationships, that collectively enhance capabilities in image
+translation, object recognition, and scene interpretation. These key deep
+learning algorithms are crucial in predictive modeling, with each contributing
+uniquely to improving the functionality and performance of visual cortical
+prostheses.
 
 \todo[inline]{Check if the citations are in the right spots.}
 
@@ -659,12 +682,25 @@ various deep learning algorithms to enhance visual perception for users. These
 models are designed to predict and interpret visual inputs, creating a seamless
 and coherent visual experience. By utilizing large datasets and advanced neural
 network architectures, predictive modeling enables the prosthetic system to
-anticipate and adapt to dynamic visual environments. Key deep learning
-algorithms are employed in predictive modeling, including
-Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs),
-Generative Adversarial Networks (GANs), and Multidimensional Graph Neural
-Networks (GNNs), each contributing uniquely to improving the functionality and
-performance of visual cortical prostheses.
+anticipate and adapt to dynamic visual environments. Aforementioned key deep
+learning algorithms are employed in predictive modeling, these include CNNs,
+RNNs, GANs, and Multidimensional GNNs.
+
+\todo[inline]{Check the table contents, maybe add citations?}
+
+\begin{table*}[ht!]
+      \centering
+      \fontsize{8pt}{10pt}\selectfont
+      \caption{| Comparison of Different Deep Learning Algorithms}\label{tab:dl_algorithms_comparison}
+      \begin{tabularx}{\textwidth}{X X X X X}
+            \hline
+            \textbf{Algorithm}                              & \textbf{Feature}                                 & \textbf{Strengths}                                                & \textbf{Limitations}                                  & \textbf{Applications}                      \\ \hline
+            \textbf{Convolutional Neural Networks (CNNs)}   & Processing of visual inputs through convolutions & Excellent for image recognition and spatial hierarchies           & Requires large datasets, computationally intensive    & Object detection, image classification     \\ \hline
+            \textbf{Recurrent Neural Networks (RNNs)}       & Sequential data processing                       & Effective for temporal sequences and time series data             & Training difficulties (vanishing/exploding gradients) & Language modeling, time series prediction  \\ \hline
+            \textbf{Generative Adversarial Networks (GANs)} & Generation of new, realistic data samples        & High-quality data generation, effective for unsupervised learning & Training instability, requires large datasets         & Image generation, style transfer           \\ \hline
+            \textbf{Graph Neural Networks (GNNs)}           & Modeling of graph-structured data                & Captures complex relationships and dependencies                   & Computationally intensive, scalability issues         & Social network analysis, molecular biology \\ \hline
+      \end{tabularx}
+\end{table*}
 
 \subsubsection*{Convolutional Neural Networks (CNNs)}
 CNNs are employed to process and classify visual inputs, enhancing the ability
@@ -718,7 +754,7 @@ complex environments where understanding the spatial arrangement of objects is
 crucial for navigation and
 interaction~\parencite{subramanianGraphConvolutionalNetworks2020,wuComprehensiveSurveyGraph2021}.
 
-\section*{Comparison with Other Visual Systems}\label{sec:comparison}
+\section*{Comparison with Other Visual Prosthetic Systems}\label{sec:comparison}
 Cortical prosthetics offer a unique approach to restoring vision compared to
 earlier retinal and optic nerve implants. Devices by companies like the
 \textit{PRIMA system} and \textit{IRIS} systems by Pixium-Vision or the
@@ -735,18 +771,19 @@ onset of injury or disease~\parencite{beyelerLearningSeeAgain2017}.
 
 \begin{table*}[ht!]
       \centering
+      \fontsize{8pt}{10pt}\selectfont
       \caption{| Comparison of Cortical, Retinal, and Optic Nerve Prostheses}\label{tab:prostheses_comparison}
-      \begin{tabularx}{\textwidth}{|X|X|X|X|}
+      \begin{tabularx}{\textwidth}{X X X X}
             \hline
-            \textbf{Feature}                  & \textbf{Cortical Prostheses}                                                       & \textbf{Retinal Prostheses}                                                    & \textbf{Optic Nerve Prostheses}                                 \\ \hline
-            \textbf{Target Area}              & Visual cortex                                                                      & Retina                                                                         & Optic nerve                                                     \\ \hline
-            \textbf{Surgical Invasiveness}    & Highly invasive (brain surgery)                                                    & Moderately invasive (eye surgery)                                              & Moderately invasive (requires access to the optic nerve)        \\ \hline
-            \textbf{Applicability}            & Suitable for severe visual impairment with retinal or optic nerve damage           & Best for retinal degenerative diseases with some functional retinal cells      & Suitable for optic nerve damage with functional retinal cells   \\ \hline
-            \textbf{Mechanism}                & Direct stimulation of the visual cortex                                            & Stimulation of remaining functional retinal cells                              & Stimulation of the optic nerve fibers                           \\ \hline
-            \textbf{Therapeutic Window}       & Longest, can be effective long after onset of blindness                            & Requires some residual retinal function                                        & Depends on the extent of optic nerve damage                     \\ \hline
-            \textbf{Technological Complexity} & High (phosphene organization and neural plasticity)                                & Moderate (retinal cell stimulation)                                            & High (complexity in targeting optic nerve fibers)               \\ \hline
-            \textbf{Advantages}               & Broad applicability, effective for extensive damage, leverages cortical plasticity & Less invasive, established success in specific diseases, direct visual pathway & Can target optic nerve damage directly, bypasses retinal issues \\ \hline
-            \textbf{Disadvantages}            & Highly invasive surgery, complex visual pattern organization                       & Limited to retinal functionality, less effective with severe damage            & Invasive, technical challenges in precise nerve stimulation     \\ \hline
+            \textbf{Feature}                           & \textbf{Cortical Prostheses}                                                       & \textbf{Retinal Prostheses}                                                    & \textbf{Optic Nerve Prostheses}                                 \\ \hline
+            \textbf{Target Area}                       & Visual cortex                                                                      & Retina                                                                         & Optic nerve                                                     \\ \hline
+            \textbf{Surgical \newline Invasiveness}    & Highly invasive (brain surgery)                                                    & Moderately invasive (eye surgery)                                              & Moderately invasive (requires access to the optic nerve)        \\ \hline
+            \textbf{Applicability}                     & Suitable for severe visual impairment with retinal or optic nerve damage           & Best for retinal degenerative diseases with some functional retinal cells      & Suitable for optic nerve damage with functional retinal cells   \\ \hline
+            \textbf{Mechanism}                         & Direct stimulation of the visual cortex                                            & Stimulation of remaining functional retinal cells                              & Stimulation of the optic nerve fibers                           \\ \hline
+            \textbf{Therapeutic \newline Window}       & Longest, can be effective long after onset of blindness                            & Requires some residual retinal function                                        & Depends on the extent of optic nerve damage                     \\ \hline
+            \textbf{Technological \newline Complexity} & High (phosphene organization and neural plasticity)                                & Moderate (retinal cell stimulation)                                            & High (complexity in targeting optic nerve fibers)               \\ \hline
+            \textbf{Advantages}                        & Broad applicability, effective for extensive damage, leverages cortical plasticity & Less invasive, established success in specific diseases, direct visual pathway & Can target optic nerve damage directly, bypasses retinal issues \\ \hline
+            \textbf{Disadvantages}                     & Highly invasive surgery, complex visual pattern organization                       & Limited to retinal functionality, less effective with severe damage            & Invasive, technical challenges in precise nerve stimulation     \\ \hline
       \end{tabularx}
 \end{table*}
 
