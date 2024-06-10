@@ -141,7 +141,18 @@
       \maketitle
       \thispagestyle{firstpage} % Apply first page style after title
       \begin{onecolabstract}
-            \noindent Visual cortical prostheses represent a revolutionary technology within the field of neuro\-prosthetics, aimed at restoring vision for individuals with visual impairments through direct neural interfaces. This review systematically explores the current capabilities, limitations, and future prospects of visual cortical prostheses, with a focus on the integration of artificial intelligence (AI) to enhance functionality and effectiveness. Key topics include the optimization of phosphene patterns, real-time image processing, and comparisons with other types of prosthetic devices. The goal is to provide a comprehensive overview of the state-of-the-art in visual cortical prostheses and propose future research directions.
+            \noindent Visual cortical prostheses represent a revolutionary
+            technology within the field of neuro\-prosthetics, aimed at
+            restoring vision for individuals with visual impairments through
+            direct neural interfaces. This review systematically explores the
+            current capabilities, limitations, and future prospects of visual
+            cortical prostheses, with a focus on the integration of artificial
+            intelligence (AI) to enhance functionality and effectiveness. Key
+            topics include the optimization of phosphene patterns, real-time
+            image processing, and comparisons with other types of visual
+            prosthetic devices. The goal is to provide a comprehensive overview
+            of the state-of-the-art in visual cortical prostheses and propose
+            future research directions.
       \end{onecolabstract}
       \textbf{Keywords:} Visual cortical prostheses, neuroprosthetics, artificial intelligence, phosphene patterns, real-time image processing
       \vspace{1cm}
@@ -623,7 +634,7 @@ relevant information. Constraints such as sparsity can be incorporated to
 minimize adverse effects of electrical stimulation. The modular design allows
 the system to adapt to practical, medical, or biophysical limitations. Some
 designs, such as the one
-by~\textcite{deruytervansteveninckEndtoendOptimizationProsthetic2022}, has been
+by~\textcite{deruytervansteveninckEndtoendOptimizationProsthetic2022}, have been
 made open-source to facilitate collaboration and further development.
 
 % Diagram figure (inkscape)
@@ -701,21 +712,62 @@ and coherent visual experience. By utilizing large datasets and advanced neural
 network architectures, predictive modeling enables the prosthetic system to
 anticipate and adapt to dynamic visual environments. Aforementioned key deep
 learning algorithms are employed in predictive modeling, these include CNNs,
-RNNs, GANs, and Multidimensional GNNs.
+RNNs, GANs, and Multidimensional GNNs. While not all of these model types have
+been explicitly used in visual prosthetics yet, they have significant potential
+to enhance the capabilities of these systems.
 
-\todo[inline]{Check the table contents, maybe add citations?}
+\todo[inline]{Check the table contents}
 
 \begin{table*}[ht!]
       \centering
       \fontsize{8pt}{10pt}\selectfont
-      \caption{| Comparison of Different Deep Learning Algorithms}\label{tab:dl_algorithms_comparison}
-      \begin{tabularx}{\textwidth}{X X X X X}
+      \caption{| Comparison of Different Deep Learning Algorithms in Prosthetic Vision Systems}\label{tab:dl_algorithms_prosthetic_vision}
+      \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
             \hline
-            \textbf{Algorithm}                              & \textbf{Feature}                                 & \textbf{Strengths}                                                & \textbf{Limitations}                                  & \textbf{Applications}                      \\ \hline
-            \textbf{Convolutional Neural Networks (CNNs)}   & Processing of visual inputs through convolutions & Excellent for image recognition and spatial hierarchies           & Requires large datasets, computationally intensive    & Object detection, image classification     \\ \hline
-            \textbf{Recurrent Neural Networks (RNNs)}       & Sequential data processing                       & Effective for temporal sequences and time series data             & Training difficulties (vanishing/exploding gradients) & Language modeling, time series prediction  \\ \hline
-            \textbf{Generative Adversarial Networks (GANs)} & Generation of new, realistic data samples        & High-quality data generation, effective for unsupervised learning & Training instability, requires large datasets         & Image generation, style transfer           \\ \hline
-            \textbf{Graph Neural Networks (GNNs)}           & Modeling of graph-structured data                & Captures complex relationships and dependencies                   & Computationally intensive, scalability issues         & Social network analysis, molecular biology \\ \hline
+            \textbf{Algorithm}                                                                                                                                                                           & \textbf{Input} & \textbf{Processing} & \textbf{Output} & \textbf{Benefits} \\ \hline
+
+            \textbf{Convolutional Neural Networks (CNNs)}                                                                                                                                                &
+            Receives raw sensory data from the external world, possibly through a camera or other sensors.                                                                                               &
+            Extracts relevant features (edges, textures, shapes) and identifies objects in the scene.                                                                                                    &
+            Generates a pattern of phosphenes that correspond to recognized objects, translating into a simplified image with phosphene ``dots'' representing different objects or regions of the scene. &
+            Excels at recognizing objects and spatial relationships. Provides
+            basic visual information like identifying objects, their locations,
+            and general scene understanding.\
+            \\ \hline
+
+            \textbf{Recurrent Neural Networks (RNNs)}                                                                                                                                                    &
+            Receives continuous streams of data from the CNN, representing the changing visual scene.                                                                                                    &
+            Maintains temporal continuity and tracks moving objects.                                                                                                                                     &
+            Modifies the phosphenes to reflect the movement of objects, allowing the user to perceive dynamic aspects of the world.                                                                      &
+            Allows for smooth tracking of movement and prediction of future
+            events. Crucial for perceiving the world as a dynamic environment
+            rather than a static snapshot.\
+            \\ \hline
+
+            \textbf{Generative Adversarial Networks (GANs)}                                                                                                                                              &
+            Trained on large datasets of real-world images.                                                                                                                                              &
+            Learns to generate realistic and diverse phosphenes resembling actual visual patterns.                                                                                                       &
+            Produces highly realistic phosphenes for displaying processed visual information.                                                                                                            &
+            Enhances perception by creating natural and vivid visual
+            experiences. Generates realistic phosphenes resembling natural light
+            patterns, making prosthetic vision less ``artificial''.\
+            \\ \hline
+
+            \textbf{Multidimensional Graph Neural Networks (GNNs)}                                                                                                                                       &
+            Receives spatial information from the CNN, representing relationships between objects in the scene.                                                                                          &
+            Analyzes spatial relationships, understanding context of visual input.                                                                                                                       &
+            Modifies phosphenes to represent objects and their spatial arrangement and potential interactions.                                                                                           &
+            Enhances spatial awareness and navigation. Understands complex
+            relationships between objects.\
+            \\ \hline
+
+            \multicolumn{5}{|p{\dimexpr\textwidth-2\tabcolsep}|}{
+            \textbf{How These Algorithms Work Together:}\newline
+            \textbf{CNN:} Acts as the core object recognition system, identifying objects and basic scene features.\newline
+            \textbf{RNN:} Adds temporal information, allowing the user to perceive movement and changes in the scene.\newline
+            \textbf{GAN:} Ensures that the output phosphenes are realistic and visually appealing.\newline
+            \textbf{GNN:} Adds a deeper level of understanding by representing spatial relationships between objects.
+            }                                                                                                                                                                                                                                                                         \\ \hline
       \end{tabularx}
 \end{table*}
 
@@ -727,10 +779,15 @@ hierarchies in images through layers of convolutions that capture features like
 edges, textures, and shapes. By training on large datasets, CNNs learn to
 recognize a wide range of objects and scenes, enabling the prosthetic system to
 provide users with detailed and accurate visual
-information~\parencite{petrosyanDecodingInterpretingCortical2021a}. This improves the
-user's ability to navigate and interact with their environment by providing
-clearer and more recognizable visual
-cues~\parencite{maheswaranathanInterpretingRetinalNeural2023}.
+information~\parencite{petrosyanDecodingInterpretingCortical2021a}. This
+improves the user's ability to navigate and interact with their environment by
+providing clearer and more recognizable visual
+cues~\parencite{maheswaranathanInterpretingRetinalNeural2023}. An example of
+such a system was used in one of the key articles by
+\textcite{deruytervansteveninckRealworldIndoorMobility2022}, where they used
+SharpNet predictions to create a surface boundary mask. SharpNet is a CNN-based
+model that allows for estimation of depth and surface normals, which is
+essential for the formation of meaningful phosphene vision patterns.
 
 \subsubsection*{Recurrent Neural Networks (RNNs)}
 RNNs, including LSTM (Long Short-Term Memory) networks, are used to handle
@@ -742,17 +799,24 @@ frames based on past visual data. This capability is essential for maintaining a
 continuous and stable visual experience, especially when tracking dynamic scenes
 or moving objects, thereby enhancing the user's perception of motion and
 improving their ability to react to changes in their
-environment~\parencite{nayebiRecurrentConnectionsPrimate2022, liaoBridgingGapsResidual2016}.
+environment~\parencite{nayebiRecurrentConnectionsPrimate2022,
+      liaoBridgingGapsResidual2016}. RRNs in the form of LSTMs have been explored for
+the use of special conditions such as low-light environments, by enhancing the
+visual inputs and provide greater image
+clarity~\parencite{renLowLightImageEnhancement2019}. In addition, these same
+specific networks show excellent performance in gesture recognition~\parencite{nguyen-trongGestureRecognitionUsing2021}, which is an
+important aspect of human interaction which can be facilitated via a prosthetic.
 
 \subsubsection*{Generative Adversarial Networks (GANs)}
-GANs are utilized to generate realistic phosphene patterns by training on large
-datasets of visual scenes, improving the fidelity and natural appearance of the
-visual output. A GAN consists of two neural networks, a generator and a
+GANs can be utilized to generate realistic phosphene patterns by training on
+large datasets of visual scenes, improving the fidelity and natural appearance
+of the visual output. A GAN consists of two neural networks, a generator and a
 discriminator, which are trained together in a competitive process. The
 generator creates synthetic images that the discriminator attempts to
-distinguish from real images. Through this adversarial training, GANs learn to
-produce high-quality, realistic images that can be used to simulate
-phosphenes—patterns of light perceived by the visual
+distinguish from real images~\parencite{ledigPhotoRealisticSingleImage2017}.
+Through this adversarial training, GANs learn to produce high-quality, realistic
+images that can be used to simulate phosphenes—patterns of light perceived by
+the visual
 cortex~\parencite{goodfellowGenerativeAdversarialNetworks2020,elnabawyPVGANGenerativeAdversarial2022}.
 This enhances the naturalness and coherence of the visual scenes presented to
 the user, making the prosthetic vision more similar to natural sight.
@@ -778,19 +842,18 @@ efficiency and reliability of wireless communication between implants and
 external devices~\parencite{liuMultidimensionalGraphNeural2024}.
 
 \section*{Comparison with Other Visual Prosthetic Systems}\label{sec:comparison}
-Cortical prosthetics offer a unique approach to restoring vision compared to
-earlier retinal and optic nerve implants. Devices by companies like the
-\textit{PRIMA system} and \textit{IRIS} systems by Pixium-Vision or the
-\textit{Orion} and \textit{ARGUSII} (FDA-approved) by Second Sight Medical
-Products Inc have already proven their merit. However, cortical prostheses are
-distinguished by their downstream positioning, which provides substantial
-rehabilitative potential for individuals who are blind or visually impaired,
-especially when retinal or optic nerve prostheses are
-ineffective~\parencite{tzekovGabelEdArtificial2020}. These implants also allow
-for the longest therapeutic intervention window. Instead of complete neural
-degeneration, post-injury compensatory plasticity mechanisms recruit neurons
-from other cortical regions, enabling effective stimulation well beyond the
-onset of injury or disease~\parencite{beyelerLearningSeeAgain2017}.
+Cortical prosthetics present a distinct and innovative method for restoring
+vision, setting them apart from earlier retinal and optic nerve implants.
+Devices such as the PRIMA and IRIS systems by Pixium-Vision, as well as the
+FDA-approved Orion and ARGUS II by Second Sight Medical Products Inc, have
+demonstrated their effectiveness. The PRIMA and IRIS systems focus on subretinal
+and epiretinal placements, respectively, to stimulate remaining retinal cells,
+making them suitable for specific retinal degenerative
+conditions~\parencites{muqitProstheticVisualAcuity2023,hoLongTermResultsEpiretinal2015}.
+
+In contrast, the Intracortical Visual Prosthesis (ICVP) and the Utah Electrode Array exemplify advancements in cortical prostheses. The ICVP uses microelectrode arrays implanted in the visual cortex to provide visual information to blind individuals, offering fine-grained control over neural activation~\parencite{troykIntracorticalVisualProsthesis2005}. The Utah Electrode Array employs high-density microelectrodes to evoke visual perceptions by stimulating the visual cortex directly, allowing for the creation of more complex visual patterns~\parencite{normannClinicalApplicationsPenetrating2016}.
+
+These cortical prostheses are uniquely advantageous due to their ability to bypass both retinal and optic nerve impairments and stimulate the visual cortex directly. This downstream positioning is particularly beneficial for individuals with severe visual impairment where other prostheses are ineffective. Additionally, cortical implants offer the longest therapeutic intervention window, leveraging compensatory plasticity mechanisms that recruit neurons from other cortical regions. This enables effective stimulation and rehabilitation long after the onset of injury or disease, significantly enhancing their rehabilitative potential~\parencite{tzekovGabelEdArtificial2020, beyelerLearningSeeAgain2017}.
 
 \begin{table*}[ht!]
       \centering
@@ -798,37 +861,93 @@ onset of injury or disease~\parencite{beyelerLearningSeeAgain2017}.
       \caption{| Comparison of Cortical, Retinal, and Optic Nerve Prostheses}\label{tab:prostheses_comparison}
       \begin{tabularx}{\textwidth}{X X X X}
             \hline
-            \textbf{Feature}                           & \textbf{Cortical Prostheses}                                                       & \textbf{Retinal Prostheses}                                                    & \textbf{Optic Nerve Prostheses}                                 \\ \hline
-            \textbf{Target Area}                       & Visual cortex                                                                      & Retina                                                                         & Optic nerve                                                     \\ \hline
-            \textbf{Surgical \newline Invasiveness}    & Highly invasive (brain surgery)                                                    & Moderately invasive (eye surgery)                                              & Moderately invasive (requires access to the optic nerve)        \\ \hline
-            \textbf{Applicability}                     & Suitable for severe visual impairment with retinal or optic nerve damage           & Best for retinal degenerative diseases with some functional retinal cells      & Suitable for optic nerve damage with functional retinal cells   \\ \hline
-            \textbf{Mechanism}                         & Direct stimulation of the visual cortex                                            & Stimulation of remaining functional retinal cells                              & Stimulation of the optic nerve fibers                           \\ \hline
-            \textbf{Therapeutic \newline Window}       & Longest, can be effective long after onset of blindness                            & Requires some residual retinal function                                        & Depends on the extent of optic nerve damage                     \\ \hline
-            \textbf{Technological \newline Complexity} & High (phosphene organization and neural plasticity)                                & Moderate (retinal cell stimulation)                                            & High (complexity in targeting optic nerve fibers)               \\ \hline
-            \textbf{Advantages}                        & Broad applicability, effective for extensive damage, leverages cortical plasticity & Less invasive, established success in specific diseases, direct visual pathway & Can target optic nerve damage directly, bypasses retinal issues \\ \hline
-            \textbf{Disadvantages}                     & Highly invasive surgery, complex visual pattern organization                       & Limited to retinal functionality, less effective with severe damage            & Invasive, technical challenges in precise nerve stimulation     \\ \hline
+            \textbf{Feature}                             & \textbf{Cortical Prostheses}                                                        & \textbf{Retinal Prostheses}                                                    & \textbf{Optic Nerve Prostheses}                                 \\ \hline
+            \textbf{Target Area}                         & Visual cortex                                                                       & Retina                                                                         & Optic nerve                                                     \\ \hline
+            \textbf{Surgical \newline Invasiveness}      & Highly invasive (brain surgery)                                                     & Moderately invasive (eye surgery)                                              & Moderately invasive (requires access to the optic nerve)        \\ \hline
+            \textbf{Applicability}                       & Suitable for severe visual impairment with retinal or optic nerve damage            & Best for retinal degenerative diseases with some functional retinal cells      & Suitable for optic nerve damage with functional retinal cells   \\ \hline
+            \textbf{Mechanism}                           & Direct stimulation of the visual cortex                                             & Stimulation of remaining functional retinal cells                              & Stimulation of the optic nerve fibers                           \\ \hline
+            \textbf{Therapeutic \newline Window}         & Longest, can be effective long after onset of blindness                             & Requires some residual retinal function                                        & Depends on the extent of optic nerve damage                     \\ \hline
+            \textbf{Technological \newline Complexity}   & High (phosphene organization and neural plasticity)                                 & Moderate (retinal cell stimulation)                                            & High (complexity in targeting optic nerve fibers)               \\ \hline
+            \textbf{Advantages}                          & Broad applicability, effective for extensive damage, leverages cortical plasticity  & Less invasive, established success in specific diseases, direct visual pathway & Can target optic nerve damage directly, bypasses retinal issues \\ \hline
+            \textbf{Disadvantages}                       & Highly invasive
+            surgery, complex visual pattern organization &
+            Limited to retinal functionality, less effective with severe damage
+                                                         & Invasive, technical challenges in precise nerve stimulation                                                                                                                                                                            \\
+            \hline
+            \textbf{Example Devices}                     & Orion (Second Sight), ICVP (Illinois Institute of Technology), Utah Electrode Array & Argus II (Second Sight), Alpha IMS (Retina Implant AG), PRIMA (Pixium-Vision)  & Epi-Ret3, Experimental Optic Nerve Stimulation Systems          \\ \hline
       \end{tabularx}
 \end{table*}
 
 \subsection*{Comparison with Retinal Prostheses}
-How do these new systems compare to existing visual prostheses?
+Retinal prostheses, such as the Argus II and the Alpha IMS, focus on stimulating the remaining functional cells within the retina to restore vision. These devices provide visual perception to individuals with retinal degenerative diseases, such as retinitis pigmentosa. The Argus II, for example, employs an epiretinal approach, placing electrodes on the surface of the retina to evoke visual sensations. The Alpha IMS, on the other hand, uses a subretinal approach, inserting the implant beneath the retina to directly stimulate photoreceptor cells~\parencite{stinglArtificialVisionWirelessly2013}.
+
+While retinal prostheses have demonstrated significant success in patients with some remaining retinal function, their applicability is limited for those with extensive retinal damage or complete retinal degeneration. In contrast, cortical prostheses offer a broader applicability by bypassing the damaged retinal cells and directly stimulating the visual cortex. This capability allows cortical prostheses to be effective even in cases where retinal prostheses are not viable. Furthermore, the position of cortical implants downstream in the visual pathway leverages the brain's plasticity, potentially offering a longer therapeutic window and enabling rehabilitation well beyond the onset of retinal degeneration~\parencite{tzekovGabelEdArtificial2020}.
 
 \subsection*{Comparison with Optic Nerve Prostheses}
+Optic nerve prostheses, such as the Epi-Ret3 device and other experimental optic nerve stimulation (ONS) systems, aim to stimulate the optic nerve fibers directly. These devices are particularly beneficial for patients with optic nerve damage, allowing for the bypass of retinal issues. However, the technological complexity involved in precisely targeting optic nerve fibers and the invasive nature of the implantation procedure present significant challenges. The Epi-Ret3 device, for example, has shown potential in preliminary studies but requires highly precise stimulation to be effective~\parencite{trieuImplantsEpiretinalStimulation2009}.
+
+In comparison, cortical prostheses, such as the Orion Visual Cortical Prosthesis
+and the Intracortical Visual Prosthesis (ICVP), offer distinct advantages by
+bypassing both the retina and optic nerve. This direct stimulation of the visual
+cortex enables broader applicability for a wide range of visual impairments,
+including those resulting from severe optic nerve damage. Additionally, cortical
+implants benefit from the brain's compensatory plasticity mechanisms, allowing
+for effective stimulation and visual rehabilitation long after the onset of
+injury or disease. This extended therapeutic window, coupled with the ability to
+leverage cortical plasticity, underscores the substantial rehabilitative
+potential of cortical prostheses for individuals who are blind or visually
+impaired~\parencite{beyelerLearningSeeAgain2017}.
 
 \subsection*{Comparison with Natural Vision}
-Plasticity and perceptual learning, how are these phenomena involved in learning
-to see again with a prosthesis?
+The PRIMA system, as demonstrated in the study
+by~\textcite{palankerSimultaneousPerceptionProsthetic2022}, represents a
+significant technological advancement in visual prosthetics, providing a means
+to restore central vision in patients with geographic atrophy due to age-related
+macular degeneration. Unlike natural vision, which relies on the complex and
+highly efficient biological processes of the retina and visual cortex, the PRIMA
+system uses a subretinal implant to convert images projected from video glasses
+into electrical signals that stimulate the remaining inner retinal neurons. This
+artificial method of vision restoration, while impressive, results in visual
+acuity levels that are still substantially lower than those achieved through
+natural vision. For example, the best prosthetic acuity achieved in the study
+was 20/460, compared to the near-perfect acuity of 20/20 in natural vision.
+
+Natural vision benefits from the intricate network of photoreceptors, bipolar
+cells, and ganglion cells within the retina, which work in concert to process
+visual information with high spatial and temporal resolution. The PRIMA system,
+on the other hand, must rely on the brain's plasticity and the ability to adapt
+to and interpret the new, less refined visual signals in the form of phosphenes
+generated by the implant. While the study showed that patients could achieve
+functional vision with the PRIMA system, including the ability to recognize
+letters and basic shapes, this prosthetic vision is limited by the current
+technology's pixel density and the spatial resolution it can provide.
+Nonetheless, systems like PRIMA offer a crucial alternative for individuals who
+have lost their natural vision.
 
 \section*{Limitations and Challenges}\label{sec:limitations}
-Details current drawbacks, biocompatibility issues, and areas requiring
-improvement in visual cortical prosthesis technology. Is the vision from ARGUSII
-for instance, any good? How do the number of electrodes matter in visual
-resolution in the experience of the user?
+\subsection*{Quality of Prosthetic Vision}
+The ARGUS II, a well-known retinal prosthesis, provides a form of artificial vision by stimulating the remaining retinal cells. However, the quality of vision achieved is far from natural. Patients often report seeing light spots (phosphenes) that can be used to form rudimentary shapes and detect motion but lack the detail and clarity of normal vision. The best visual acuity achieved by ARGUS II users is approximately 20/1260, which is significantly lower than the standard for legal blindness (20/200). This level of vision is often insufficient for detailed tasks such as reading or recognizing faces, which limits the functional applications of the device in daily life.
+
+\subsection*{Impact of Electrode Count on Visual Resolution}
+The number of electrodes in a visual prosthesis is a critical factor in determining the resolution and quality of the perceived image. More electrodes can potentially provide a higher resolution, as each electrode can stimulate a different area of the visual cortex or retina, producing a more detailed phosphene map. However, increasing the number of electrodes also introduces significant challenges, such as maintaining precise control over each electrode, ensuring stable long-term performance, and avoiding crosstalk between electrodes. For instance, while the Utah Electrode Array uses high-density microelectrodes to evoke more complex visual patterns, it faces issues related to the precise organization and interpretation of these patterns by the brain.
+
+\subsection*{Biocompatibility Issues}
+Biocompatibility remains a major challenge in the development and deployment of visual cortical prostheses. The introduction of foreign materials into the brain or eye can trigger immune responses that may lead to inflammation, scar tissue formation, and eventual device failure. Materials such as PEDOT and graphene have shown promise due to their electrical properties and compatibility with neural tissues, but long-term biocompatibility and stability are still under investigation. Additionally, flexible and biocompatible electrodes, while reducing the risk of damage, still need to address issues related to integration with the neural tissue and maintaining performance over time.
+
+\subsection*{Surgical and Technological Complexities}
+The implantation of visual prostheses, particularly those involving the visual cortex, requires highly invasive surgical procedures that pose significant risks, including infection, bleeding, and damage to neural tissues. The complexity of these surgeries can limit the widespread adoption of such systems and make them accessible only in specialized medical centers.
+
+Technologically, creating a seamless interface between the prosthesis and the neural tissue is challenging. The variability in individual neural architecture means that prosthetic solutions must often be highly customized, which can increase costs and complicate the development process.
+
+\subsection*{Limitations in Current AI and Processing Technologies}
+While AI and advanced processing have greatly enhanced the potential of visual prostheses, they are not without limitations. Real-time data processing requires significant computational power, and delays in processing can lead to a disjointed visual experience. Moreover, the algorithms used to optimize phosphene patterns and visual interpretations need continuous improvement to better mimic natural vision and adapt to various visual environments.
 
 \section*{Future Perspectives}\label{sec:future}
 Provides a comprehensive overview of the current state and future potential of
 visual cortical prostheses, highlighting technological capabilities, AI
 integration, and challenges.
+
+\todo[inline]{Maybe omit the next two subsections?}
 
 \subsection*{Clinical Applications}
 A caveat is the invasive nature of these cortical devices, which require
