@@ -71,7 +71,7 @@
 \renewcommand{\bibfont}{\fontsize{7pt}{9pt}\selectfont}% Set font size to 7pt, maybe too small. Change to 8pt if needed. Also adjust actual text size?
 
 % Title
-\title{State-of-the-Art in Visual Cortical Prostheses: Technological Advances and Future Directions}
+\title{State-of-the-Art in Visual Cortical Prostheses: Technological Advances \& AI Integration}
 \author{
   Marc J. Posthuma\\
   Student Number: 4413105\\
@@ -130,11 +130,11 @@
 % Document
 \begin{document}
 
-\pagestyle{plain}% Default plain page style for the list of TODOs
-\listoftodos% Remove this line before submission
-\clearpage%To make sure the todo list is on a separate page without fancyhdr
+% \pagestyle{plain}% Default plain page style for the list of TODOs
+% \listoftodos% Remove this line before submission
+% \clearpage%To make sure the todo list is on a separate page without fancyhdr
 
-\newpage% To make sure the todo list is on a separate page without fancyhdr
+% \newpage% To make sure the todo list is on a separate page without fancyhdr
 
 % Title and abstract
 \twocolumn[
@@ -249,7 +249,8 @@ the current state and advancements in visual cortical prostheses:
 Recent years have seen significant progress in the development of visual
 cortical prostheses, driven by advancements in both hardware and software
 systems. These innovations are pivotal in enhancing the functionality,
-efficiency, and user experience of these devices.
+efficiency, and user experience of these devices. For an overview of the
+advances see table~\ref{fig:advances_vcp}.
 
 \subsection*{Advancements in Biomaterials and Electrode Design}
 One major area of advancement is in electrode design and fabrication.
@@ -257,6 +258,7 @@ Traditional electrodes have been limited by issues such as biocompatibility,
 stability, and the ability to generate precise neural stimulation. Recent
 studies have introduced novel materials and fabrication techniques that
 significantly improve these aspects.
+
 
 \subsubsection*{Conductive Polymers}
 The development of flexible and biocompatible electrodes allows for better
@@ -321,7 +323,7 @@ efficiency~\parencite{sharCarbonNanotubeNanocomposite2023}.
 Another promising implementation is the use of graphene, a fairly new
 two-dimensional material known for its outstanding electrical and thermal
 properties. Graphene-based electrodes, due to their thinness, are incredibly
-flexible and highly conductive with a huge surface are. These characteristics
+flexible and highly conductive with a huge surface area. These characteristics
 are crucial for long-term implantation and stable neural interfaces.
 Furthermore, graphene has proven biocompatibility in multiple biological
 scaffolding
@@ -345,12 +347,8 @@ to provide biosensor functionality in addition to neural stimulation, allowing
 for the possibility of also recording neural
 activity~\parencite{raufGoldNanostructuredLaserscribed2021}.
 
-These nanotechnology-based advancements are paving the way for the development
-of more sophisticated and effective visual cortical prostheses, providing users
-with improved visual experiences and greater functionality.
-
 \subsubsection*{3D Printing}
-Recent advancements in 3D printing has allowed for unparalleled precision and
+3D printing technology has allowed for unparalleled precision and
 customization capabilities, allowing for the creation of complex and highly
 detailed electrode arrays that can be tailored to the unique anatomical features
 of individual patients~\parencite{guoImplantableLiquidMetalbased2017}.
@@ -369,18 +367,26 @@ printing reduces manufacturing time and cost, facilitating quicker iterations
 and refinements in electrode design, which accelerates the development
 process~\parencite{zhangClimbinginspiredTwiningElectrodes2019}.
 
+The combination of conductive polymers, nanotechnology, and 3D printing allows
+for the creation of more densely packed electrode arrays that do not incur as
+many issues with the surrounding tissue, while also providing a more stable and
+reliable hardware base for the complex demands of prosthetic vision devices and
+the software that utilizes them.
+
 \subsection*{Improved Signal Processing and Integration}
 Advances in signal processing and integration enhance the performance and
 functionality of software that orchestrate the formation of phosphene patterns
-in higher resolutions. This is supported by High-resolution imaging techniques
+in higher resolutions. This is supported by high-resolution imaging techniques
 and sophisticated signal processing algorithms that have significantly improved
-the precision and reliability of these devices.
+the precision and reliability of implants while also evaluating their functionality.
 
 \subsubsection*{High-Resolution Imaging}
 High-resolution imaging techniques provide detailed maps of the brain's cortical
 structures. These techniques allow for more precise placement and targeting of
 electrodes, which is essential for effective neural stimulation and helps
-prevent unnecessary damage to surrounding tissue.
+prevent unnecessary damage to surrounding tissue. As the amount of electrodes
+increases, the need for more precise placement becomes more important to ensure
+that the electrodes are stimulating the correct regions of the visual cortex.
 
 Functional Magnetic Resonance Imaging (fMRI) is one such high-resolution imaging
 technique that provides high-resolution images of
@@ -395,11 +401,11 @@ interactions between electrodes and neural tissue over time, providing insights
 that can guide the design and optimization of electrode
 arrays~\parencite{yangIntegratedMicroprismMicroelectrode2024}.
 
-Furthermore, the development of NIR-II semiconducting polymers has enhanced in
-vivo high-resolution imaging capabilities. These polymers offer excellent
-penetration depth and spatial resolution using near-infrared window imaging,
-which are critical for accurate diagnostics and possible therapeutic
-applications in neural
+Furthermore, the development of near-infrared light compatible (NIR-II)
+semiconducting polymers has enhanced in vivo high-resolution imaging
+capabilities. These polymers offer excellent penetration depth and spatial
+resolution using near-infrared window imaging, which are critical for accurate
+diagnostics and possible therapeutic applications in neural
 prosthetics~\parencite{wangRecentProgressSecond2023,kangNIRIISemiconductingPolymers2023}.
 
 Deep learning techniques have also been employed to enhance the resolution of
@@ -557,10 +563,10 @@ prosthetic systems.
                         \end{itemize}
             \end{itemize}
       \end{tcolorbox}
-      % \caption{Summary of key technological advancements in the development of
-      %       visual cortical prostheses, highlighting improvements in biomaterials,
-      %       signal processing, software, and functional
-      %       integration.}\label{fig:advances_vcp}
+      \caption{| Summary of key technological advancements in the development of
+            visual cortical prostheses, highlighting improvements in biomaterials,
+            signal processing, software, and functional
+            integration.}\label{fig:advances_vcp}
 \end{figure*}
 
 \subsection*{Other Functional Improvements}
@@ -677,9 +683,8 @@ spatial relationships, that collectively enhance capabilities in image
 translation, object recognition, and scene interpretation. These key deep
 learning algorithms are crucial in predictive modeling, with each contributing
 uniquely to improving the functionality and performance of visual cortical
-prostheses.
-
-\todo[inline]{Check if the citations are in the right spots.}
+prostheses. A comparison of these algorithms in prosthetic vision systems is
+provided in Table~\ref{tab:dl_algorithms_prosthetic_vision}.
 
 \subsubsection*{Predictive Modeling}
 Predictive modeling plays a crucial role in prosthetic vision by leveraging
@@ -692,8 +697,6 @@ learning algorithms are employed in predictive modeling, these include CNNs,
 RNNs, GANs, and Multidimensional GNNs. While not all of these model types have
 been explicitly used in visual prosthetics yet, they have significant potential
 to enhance the capabilities of these systems.
-
-\todo[inline]{Check the table contents}
 
 \begin{table*}[ht!]
       \centering
@@ -739,7 +742,7 @@ to enhance the capabilities of these systems.
             \\ \hline
 
             \multicolumn{5}{|p{\dimexpr\textwidth-2\tabcolsep}|}{
-            \textbf{How These Algorithms Work Together:}\newline
+            \textbf{How These Algorithms Can Work Together:}\newline
             \textbf{CNN:} Acts as the core object recognition system, identifying objects and basic scene features.\newline
             \textbf{RNN:} Adds temporal information, allowing the user to perceive movement and changes in the scene.\newline
             \textbf{GAN:} Ensures that the output phosphenes are realistic and visually appealing.\newline
@@ -817,6 +820,11 @@ communication policies in neural prosthetics. These networks use graph-based
 representations to manage complex data transmission scenarios, improving the
 efficiency and reliability of wireless communication between implants and
 external devices~\parencite{liuMultidimensionalGraphNeural2024}.
+
+In the future, these algorithms will have to be combined to create a
+comprehensive AI system that can process and interpret all the varied visual
+stimuli that a user may encounter and adapt their relative parameters in real
+time to recreate a faithful representation of the environment.
 
 \section*{Comparison with Other Visual Prosthetic Systems}\label{sec:comparison}
 Cortical prosthetics present a distinct and innovative method for restoring
@@ -933,13 +941,12 @@ extra electrodes, which are already incredibly small and densely packed in Utah
 arrays for instance.
 
 \subsubsection*{Spatial Resolution}
+In addition to a limited field of view, the spatial resolution of current
+devices also needs significant improvement. In practice this means that the
+number of distinguishable phosphenes needs to increase. While the technology to
+create more dense electrodes is available, there is no direct correlation that
+increase electrode density will lead to a higher resolution.
 
-
-\subsection*{Impact of Electrode Count on Visual Resolution}
-The number of electrodes in a visual prosthesis is a critical factor in determining the resolution and quality of the perceived image. More electrodes can potentially provide a higher resolution, as each electrode can stimulate a different area of the visual cortex or retina, producing a more detailed phosphene map. However, increasing the number of electrodes also introduces significant challenges, such as maintaining precise control over each electrode, ensuring stable long-term performance, and avoiding crosstalk between electrodes. For instance, while the Utah Electrode Array uses high-density microelectrodes to evoke more complex visual patterns, it faces issues related to the precise organization and interpretation of these patterns by the brain.
-
-\subsection*{Biocompatibility Issues}
-Biocompatibility remains a major challenge in the development and deployment of visual cortical prostheses. The introduction of foreign materials into the brain or eye can trigger immune responses that may lead to inflammation, scar tissue formation, and eventual device failure. Materials such as PEDOT and graphene have shown promise due to their electrical properties and compatibility with neural tissues, but long-term biocompatibility and stability are still under investigation. Additionally, flexible and biocompatible electrodes, while reducing the risk of damage, still need to address issues related to integration with the neural tissue and maintaining performance over time.
 
 \subsection*{Surgical and Technological Complexities}
 The implantation of visual prostheses, particularly those involving the visual cortex, requires highly invasive surgical procedures that pose significant risks, including infection, bleeding, and damage to neural tissues. The complexity of these surgeries can limit the widespread adoption of such systems and make them accessible only in specialized medical centers.
@@ -953,8 +960,6 @@ While AI and advanced processing have greatly enhanced the potential of visual p
 Provides a comprehensive overview of the current state and future potential of
 visual cortical prostheses, highlighting technological capabilities, AI
 integration, and challenges.
-
-\todo[inline]{Maybe omit the next two subsections?}
 
 \subsection*{Clinical Applications}
 A caveat is the invasive nature of these cortical devices, which require
