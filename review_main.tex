@@ -130,11 +130,11 @@
 % Document
 \begin{document}
 
-\pagestyle{plain}% Default plain page style for the list of TODOs
-\listoftodos% Remove this line before submission
-\clearpage%To make sure the todo list is on a separate page without fancyhdr
+% \pagestyle{plain}% Default plain page style for the list of TODOs
+% \listoftodos% Remove this line before submission
+% \clearpage%To make sure the todo list is on a separate page without fancyhdr
 
-\newpage% To make sure the todo list is on a separate page without fancyhdr
+% \newpage% To make sure the todo list is on a separate page without fancyhdr
 
 % Title and abstract
 \twocolumn[
@@ -941,56 +941,152 @@ extra electrodes, which are already incredibly small and densely packed in Utah
 arrays for instance.
 
 \subsubsection*{Spatial Resolution}
-In addition to a limited field of view, the spatial resolution of current
-devices also needs significant improvement. In practice this means that the
-number of distinguishable phosphenes needs to increase. While the technology to
-create more dense electrodes is available, there is no direct correlation that
-increase electrode density will lead to a higher resolution.
+In addition to a limited field of view, current devices require significant
+improvement in spatial resolution. Practically, this means increasing the number
+of distinguishable phosphenes. Although technology exists to create smaller,
+higher-density electrodes for greater pixel density, challenges such as
+electrode cross-talk and spatial selectivity in neural activation become more
+important~\parencite{bordaAdvancesVisualProstheses2022}. Retinal and optic nerve
+prostheses have employed solutions such as bipolar stimulation of two adjacent
+electrodes, current steering to the desired location, and modulation of current
+amplitude to achieve more focused
+stimulation~\parencite{yanElectricallyEvokedResponses2016,delbekePositionSizeLuminosity2003}.
 
-\todo[inline]{This is where I left off, see rebuttal for more information.}
+It remains difficult to target few neurons without affecting others, which may
+lead to distorted or overlapping phosphenes. The challenge here is to find
+stimulation parameters that optimally characterize the phosphenes on aspects
+such as brightness, size, color and duration. This is a complex optimization
+problem where developments in AI provide the most direct road to improvement in
+SPV quality. Smarter algorithms that can employ tricks to reduce computational
+complexity and increase the speed of the optimization process. An example of
+this is contour extraction for object recognition which allows for scene
+simplification~\parencite{deruytervansteveninckRealworldIndoorMobility2022}.
+Allowing for sufficient visual information to be perceived at various phosphene
+(pixel) resolutions without the need for higher density stimulation.
 
-\subsection*{Surgical and Technological Complexities}
-The implantation of visual prostheses, particularly those involving the visual cortex, requires highly invasive surgical procedures that pose significant risks, including infection, bleeding, and damage to neural tissues. The complexity of these surgeries can limit the widespread adoption of such systems and make them accessible only in specialized medical centers.
+\subsubsection*{Temporal Resolution}
+A characterized issue with SPV is phosphene fading, which affects retinal
+prostheses such as ARGUS-II and can similarly affect cortical devices is a
+phenomenon known as the Troxler effect; where a stationary visual stimulus in
+the peripheral vision tends to fade and disappear over time if it remains
+unchanged and the observer maintains a steady gaze. This effect occurs because
+of neural adaptation in the visual system, where constant stimuli become less
+noticeable as neurons reduce their firing rates in response to unchanging input.
+This makes perception of flicker fusion of light at stimulation frequencies
+higher than 30 Hz
+near-impossible~\parencite{perezfornosTemporalPropertiesVisual2012}. This effect
+can be reduced in sighted individuals with ocular micromovements such as
+tremors, drifts or microsaccades~\parencite{hafedOculomotorBehaviorBlind2016}.
+However, with SPV the projected image needs to move across the electrode array
+to simulate the sensation of shifted vision and the physiological ocular
+movements need to still be possible in the blind to reduce the Troxler
+effect~\parencite{moleirinhoImpactSynchronousAsynchronous2021}.
 
-Technologically, creating a seamless interface between the prosthesis and the neural tissue is challenging. The variability in individual neural architecture means that prosthetic solutions must often be highly customized, which can increase costs and complicate the development process.
+\subsection*{Limitations in Current AI Technology}
+Despite significant advancements in AI and advanced processing over the past
+decade, several key issues remain unresolved. One primary challenge is the
+increased complexity of models required to interpret more intricate visual
+scenes. This complexity leads to higher system latency when reconstructing the
+scene's spatial visual representation (SPV), posing a problem for real-time
+adaptation and mobility. Solutions such as Principal Component Analysis may help
+reduce data dimensionality and increase processing speed, but at a cost of
+visual detail in the SPV~\parencite{mohammadiEnhancedArtificialVision2023}.
 
-\subsection*{Limitations in Current AI and Processing Technologies}
-While AI and advanced processing have greatly enhanced the potential of visual prostheses, they are not without limitations. Real-time data processing requires significant computational power, and delays in processing can lead to a disjointed visual experience. Moreover, the algorithms used to optimize phosphene patterns and visual interpretations need continuous improvement to better mimic natural vision and adapt to various visual environments.
+Additionally, more complex deep learning models necessitate larger annotated
+datasets for training and benchmarking, which are not always available for
+specific tasks. Even when sufficient data is accessible, models must be robust
+enough to handle diverse visual scenarios, including varying lighting conditions
+and moving objects, which are challenging to simulate accurately in a laboratory
+setting~\parencite{yuilleDeepNetsWhat2021}.
 
 \section*{Future Perspectives}\label{sec:future}
-Provides a comprehensive overview of the current state and future potential of
-visual cortical prostheses, highlighting technological capabilities, AI
-integration, and challenges.
+Remarkable progress has been made since the advent of the first visual
+prosthetic prototypes with even some commercial succes proving the merit of this
+incredible technology. The reality however, is that the actual adaptation of an
+actual cortical device is still only limited to virtual reality testing via
+simulation~\parencite{deruytervansteveninckRealworldIndoorMobility2022}.
 
-\subsection*{Clinical Applications}
-A caveat is the invasive nature of these cortical devices, which require
-surgical implantation.
+\subsection*{Clinical Application}
+A caveat is the invasive nature of these still hypothetical cortical devices, is
+the required surgical implantation in the brain. The implantation of visual
+prostheses, particularly those involving the visual cortex, requires highly
+invasive surgical procedures that pose significant risks, including infection,
+bleeding, and damage to neural tissues. Also the longevity of the hardware and
+the safety for users will still take many years to evaluate. In contrast The complexity of these surgeries can
+limit the widespread adoption of such systems and make them accessible only in
+specialized medical centers. COMPARE previous generation devices.
 
-\begin{itemize}
-      \item Broader and more diverse clinical trials to assess long-term efficacy
-            and safety.
-      \item Exploration of personalized prosthetic solutions tailored to
-            individual neural architectures.
-\end{itemize}
+Technologically, creating a seamless interface between the prosthesis and the
+neural tissue is challenging. The variability in individual neural architecture
+means that prosthetic solutions must often be highly customized, which can
+increase costs and complicate the development process.
+
+To ensure the long-term efficacy and safety of visual cortical prostheses, it is
+imperative to conduct broader and more diverse clinical trials. These trials
+should encompass a wide demographic, including various age groups, genders, and
+ethnic backgrounds, to determine how different populations respond to the
+technology. Such trials will provide comprehensive data on the performance and
+reliability of the prostheses over extended periods, identify potential
+long-term complications, and help refine surgical techniques and postoperative
+care protocols. By addressing these aspects, the medical community can establish
+robust guidelines and standards for the safe implementation of these devices.
+
+The variability in neural architecture among individuals necessitates the
+development of personalized prosthetic solutions. Customized prostheses that
+account for the unique neural and anatomical characteristics of each patient can
+significantly enhance the effectiveness and comfort of the devices. Personalized
+solutions involve advanced imaging techniques to map the neural landscape,
+followed by the creation of bespoke electrode arrays and stimulation protocols.
+This approach ensures optimal interfacing with the neural tissue, minimizes
+adverse reactions, and improves the overall user experience. While this
+customization can be cost-intensive and technologically demanding, it holds the
+promise of maximizing the benefits of visual cortical prostheses for each user.
 
 \subsection*{Ethical and Societal Implications}
-\begin{itemize}
-      \item Considerations of the ethical implications of advanced neural
-            interfacing.
-      \item Societal impact and accessibility of such technology for individuals
-            with visual impairments.
-\end{itemize}
+The development and implementation of advanced neural interfacing technologies
+raise several ethical concerns that must be carefully considered. These include
+issues of privacy, as the devices interface directly with the brain and could
+potentially be used to access or manipulate neural information. There are also
+concerns about autonomy, particularly regarding the extent to which individuals
+can control or are influenced by the prosthetic systems. Informed consent and
+the right to opt-out are crucial ethical considerations, ensuring that users
+fully understand the implications of using such devices. Additionally, there is
+a need to establish clear regulatory frameworks to prevent misuse and ensure
+that the technology is developed and applied responsibly.
+
+The societal impact of visual cortical prostheses extends beyond individual
+users to broader social and economic contexts. Ensuring accessibility to these
+advanced technologies is paramount, particularly for individuals from diverse
+socio-economic backgrounds. Strategies to reduce costs and improve the
+availability of these devices in various healthcare settings are essential.
+Furthermore, public awareness campaigns and educational initiatives can help
+integrate individuals with visual impairments into society more effectively,
+reducing stigma and promoting inclusivity. Policymakers and stakeholders must
+work together to address potential disparities in access and ensure that the
+benefits of these technological advancements are equitably distributed.
 
 \section*{Conclusion}\label{sec:conclusion}
-In conclusion, the technological advancements in electrode design,
-microfabrication, artificial intelligence, closed-loop systems, wireless
-technology, and multi-modal sensory integration are significantly advancing the
-field of visual cortical prostheses. These innovations are crucial for
-developing more effective, reliable, and user-friendly devices that can better
-restore vision for individuals with severe visual impairments. Continued
-research and development in these areas promise to further enhance the
-capabilities and accessibility of visual cortical prostheses, paving the way for
-their widespread clinical application.
+In conclusion, significant technological advancements in visual cortical
+prostheses, particularly in AI integration, are revolutionizing the field. The
+use of advanced AI algorithms, such as CNNs, RNNs, and GANs, has greatly
+enhanced visual data processing and optimized phosphene patterns, resulting in
+more natural and coherent visual experiences for users. These innovations,
+coupled with high-density electrode arrays enabled by nanotechnology and 3D
+printing, ensure precise neural stimulation and improved quality of visual
+information. Furthermore, the implementation of closed-loop feedback systems and
+multi-modal sensory integration allows for dynamic adjustment and a more
+holistic sensory experience, closely mimicking natural vision.
+
+Despite the challenges associated with the invasive nature of cortical
+prostheses, ongoing advancements promise to mitigate these issues, making the
+devices safer and more accessible. Future research should prioritize broader
+clinical trials to assess long-term efficacy and personalized prosthetic
+solutions tailored to individual neural architectures. By addressing these
+areas, we move closer to providing effective vision restoration for individuals
+with severe visual impairments, ultimately enhancing their quality of life and
+societal integration. The future of visual cortical prostheses, driven by AI
+integration, holds immense promise for transformative changes in the treatment
+of blindness and severe visual impairments.
 
 \printbibliography%
 \onecolumn
